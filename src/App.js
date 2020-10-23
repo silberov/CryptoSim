@@ -67,17 +67,13 @@ function Howmuch(){
       <form>
   <label>
     How much would you like to invest?
+    <p>Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing </p>
     <input type="text" name="name" />
   </label>
   <Link to= "/taketest"><input type="submit" value="Submit" /></Link>
-</form>
-
-
-    </div>
-
-
+  </form>
+  </div>
   )
-
 };
 
 function Test(){
@@ -164,7 +160,7 @@ function Type3(){
 
      <Link to ="type1">  <h3>Change to type1</h3></Link>
    <Link to ="type2">  <h3>Change to type2</h3></Link>
-     
+      
      
      
      <Link to="/portfolio">  <button>Go to portfolio</button> </Link> 
