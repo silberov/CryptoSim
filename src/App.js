@@ -57,7 +57,6 @@ function HomePage(){
 
 function Test(props) {
   console.log(props.location.state.sum);
-  //console.log(this.state)
 
   return(
     <div>
