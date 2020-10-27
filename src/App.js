@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter as Router,Link} from "react-router-dom";
+import HowMuch from './Components/how-much'
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Route component={HomePage} exact path="/"/>
      <Route component={Market} path= "/market"/>
-     <Route component={Howmuch} path= "/howmuch"/>
+     <Route component={HowMuch} path= "/howmuch"/>
      <Route component={Test} path= "/taketest"/>
      <Route component={Type1} path= "/type1"/>
      <Route component={Type2} path= "/type2"/>
@@ -38,7 +39,7 @@ function Market(){
 
 
   )
-
+ 
 }
 
 
@@ -60,21 +61,21 @@ function HomePage(){
 };
 
 
-function Howmuch(){
+// function Howmuch(){
 
-  return(
-    <div>
-      <form>
-  <label>
-    How much would you like to invest?
-    <p>Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing </p>
-    <input type="text" name="name" />
-  </label>
-  <Link to= "/taketest"><input type="submit" value="Submit" /></Link>
-  </form>
-  </div>
-  )
-};
+//   return(
+//     <div>
+//       <form>
+//   <label>
+//     How much would you like to invest?
+//     <p>Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing </p>
+//     <input type="text" name="name" />
+//   </label>
+//   <Link to= "/taketest"><input type="submit" value="Submit" /></Link>
+//   </form>
+//   </div>
+//   )
+// };
 
 function Test(){
 
