@@ -55,7 +55,9 @@ function HomePage(){
 
 
 
-function Test(){
+function Test(props) {
+  console.log(props.location.state.sum);
+  //console.log(this.state)
 
   return(
     <div>
@@ -74,22 +76,12 @@ function Type1(){
 
   return(
     <div>
-     
-
-     <h2>You are type 1</h2>
-   <Link to ="type2">  <h3>Change to type2</h3></Link>
-   <Link to ="type3">  <h3>Change to type3</h3></Link>
-     
-     
-   <Link to="/portfolio">  <button>Go to portfolio</button> </Link> 
-
-
-
+      <h2>You are type 1</h2>
+      <Link to ="type2">  <h3>Change to type2</h3></Link>
+      <Link to ="type3">  <h3>Change to type3</h3></Link>
+      <Link to="/portfolio">  <button>Go to portfolio</button></Link> 
     </div>
-
-
   )
-
 };
 
 

@@ -10,12 +10,12 @@ class HowMuch extends React.Component {
 
     }
     handleChange(event) {
-        console.log(this);
+        //console.log(this);
         this.setState({value: event.target.value});
       }
 
     handleSubmit (event) {
-        alert('A name was submitted: ' + this.state.value);
+        //alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
     }
     render() {
@@ -27,7 +27,14 @@ class HowMuch extends React.Component {
                 Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing
                 <input onChange={this.handleChange} value={this.state.value} name="sum" />
             </label>
-            <Link to= "/taketest"><input  type="submit" value="Submit" /></Link>
+            <Link to= "/taketest" ><input  type="submit" value="Submit" /></Link>
+            <Link to={{
+                pathname: '/taketest',
+                //sum: this.state.value,
+                state: {
+                    sum: this.state.value
+                }
+                }}><input  type="submit" value="Submit" /></Link>
         </form>
     </div>
     )
