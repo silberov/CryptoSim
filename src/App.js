@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router,Link} from "react-router-dom";
-import HowMuch from './Components/how-much'
+import HowMuch from './Components/how-much/how-much'
+import Type1 from './Components/typesOfInvestors/type1'
 
 
 function App() {
@@ -71,17 +72,17 @@ function Test(props) {
 
 };
 
-function Type1(){
+// function Type1(){
 
-  return(
-    <div>
-      <h2>You are type 1</h2>
-      <Link to ="type2">  <h3>Change to type2</h3></Link>
-      <Link to ="type3">  <h3>Change to type3</h3></Link>
-      <Link to="/portfolio">  <button>Go to portfolio</button></Link> 
-    </div>
-  )
-};
+//   return(
+//     <div>
+//       <h2>You are type 1</h2>
+//       <Link to ="type2">  <h3>Change to type2</h3></Link>
+//       <Link to ="type3">  <h3>Change to type3</h3></Link>
+//       <Link to="/portfolio">  <button>Go to portfolio</button></Link> 
+//     </div>
+//   )
+// };
 
 
 function Type2(){

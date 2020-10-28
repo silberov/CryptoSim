@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router,Link} from "react-router-dom";
+import { BrowserRouter as Link} from "react-router-dom";
 
 class HowMuch extends React.Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class HowMuch extends React.Component {
                 Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing
                 <input onChange={this.handleChange} value={this.state.value} name="sum" />
             </label>
-            <Link to= "/taketest" ><input  type="submit" value="Submit" /></Link>
+            {/* <Link to= "/taketest" ><input  type="submit" value="Submit" /></Link> */}
             <Link to={{
                 pathname: '/taketest',
                 //sum: this.state.value,
