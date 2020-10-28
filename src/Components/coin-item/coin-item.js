@@ -1,4 +1,5 @@
 import React from 'react';
+import './coin-item.css'
 
 class CoinItem extends React.Component {
     constructor (props) {
@@ -9,6 +10,7 @@ class CoinItem extends React.Component {
                 amount : 3,
             },
             coinMarket: {
+                icon: 'https://s2.coinmarketcap.com/static/img/coins/32x32/1.png',
                 price: 13636.32,
                 change: -0.21
             }
@@ -17,11 +19,13 @@ class CoinItem extends React.Component {
     }
     render () {
         return (
-            <div>
-                <div className="coinSymbol"></div>
+            <div className='coinItem'>
+                <div className="coinSymbol">
+                    <img src={this.state.coinMarket.icon} alt=""/>
+                </div>
                 <h3>Bitcoin</h3>
                 <div className="price">
-                    <p>{this.state.coinMarket.price}</p>
+                    <p>{this.state.coinMarket.price} $</p>
                     <p className={`${this.state.coinMarket.change > 0 
                     ? 'changePos' 
                     : 'changeNeg'}`}>
@@ -29,8 +33,8 @@ class CoinItem extends React.Component {
                     </p>
                 </div>
                 <div className="investment">
-                    <p>{}</p>
-                    <p>{this.state.coin.amount}+" "{this.state.coin.symbol}+</p>
+                    <p>{this.state.coinInvested.amount * this.state.coinMarket.price} $</p>
+                    <p>{this.state.coinInvested.amount} {this.state.coinInvested.symbol}</p>
                 </div>
             </div>
         );
