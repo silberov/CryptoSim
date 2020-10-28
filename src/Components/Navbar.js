@@ -1,6 +1,5 @@
 import React from 'react';
-import menuItems from './MenuItems'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 
 
 
@@ -10,26 +9,13 @@ function Navbar() {
     return (
         <div className="navbarItems">
             <nav>
-                <h1 className="navbar-logo">CryptoSim</h1>
-                <ul>
-                    {menuItems.map((item, index) => {
-
-                        return (
-                            <li key={index}>
-                                <a className={item.cName}>{item.title}</a>
-                            </li>
-                        )
-
-                    })
-                    }
-
-
+                <ul callName="nav-links">
+                    <Link to="/"><li><a>Home</a></li></Link>
+                    <Link to="/market"><li><a>Market</a></li></Link>
+                    <Link to="/portfolio"><li><a>Portfolio</a></li></Link>
 
                 </ul>
-
-
             </nav>
-
         </div>
     )
 
