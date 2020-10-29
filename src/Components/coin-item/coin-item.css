@@ -6,6 +6,7 @@
 .coinItem {
   margin: auto;
   padding: 16px;
+  background-color: #fbfbfb;
   display: flex;
   justify-content: space-between;
   align-items: center;
