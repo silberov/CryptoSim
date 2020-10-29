@@ -5,14 +5,20 @@
 
 .coinItem {
   margin: auto;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .investment,
 .price {
   text-align: right;
   font-size: 12px;
+}
+
+.gray {
+  color: gray;
 }
 
 .changePos {

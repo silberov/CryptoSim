@@ -34,7 +34,7 @@ class CoinItem extends React.Component {
                 </div>
                 <div className="investment">
                     <p>{this.state.coinInvested.amount * this.state.coinMarket.price} $</p>
-                    <p>{this.state.coinInvested.amount} {this.state.coinInvested.symbol}</p>
+                    <p className="gray">{this.state.coinInvested.amount} {this.state.coinInvested.symbol}</p>
                 </div>
             </div>
         );
