@@ -14,7 +14,7 @@ class Test extends React.Component {
     constructor (props) {
         super(props);
         this.state = { type: [] };
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
     }
 
     render () {
