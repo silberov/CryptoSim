@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 import Navbar from "./Components/Navbar"
 import Logo from "./Components/Logo"
+// import Market from "./Components/MarketTracker"
 import Market from "./Components/MarketTracker"
 import "./App.css"
 import axios from 'axios';
