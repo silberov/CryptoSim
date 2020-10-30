@@ -10,7 +10,6 @@ class HowMuch extends React.Component {
 
     }
     handleChange(event) {
-        //console.log(this);
         this.setState({value: event.target.value});
       }
 
@@ -18,6 +17,7 @@ class HowMuch extends React.Component {
         //alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
     }
+
     render() {
     return(
       <div>
@@ -27,10 +27,12 @@ class HowMuch extends React.Component {
                 Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing
                 <input onChange={this.handleChange} value={this.state.value} name="sum" />
             </label>
+<<<<<<< HEAD:src/Components/how-much/how-much.js
             {/* <Link to= "/taketest" ><input  type="submit" value="Submit" /></Link> */}
+=======
+>>>>>>> 02e708a7ef8a5ccdc577386e560baad77a3b3f32:src/Components/how-much.js
             <Link to={{
                 pathname: '/taketest',
-                //sum: this.state.value,
                 state: {
                     sum: this.state.value
                 }
