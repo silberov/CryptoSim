@@ -7,6 +7,9 @@ import "./App.css"
 import axios from 'axios';
 
 
+// this.setState({ data: marketData[j], name: marketData[j].name, rank:marketData[j].rank});
+
+
 
 
 function App() {
@@ -19,7 +22,6 @@ function App() {
 
         <Route component={HomePage} exact path="/" />
         <Route component={Market} path="/market" />
-     
         <Route component={Howmuch} path="/howmuch" />
         <Route component={Test} path="/taketest" />
         <Route component={Type1} path="/type1" />
