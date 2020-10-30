@@ -27,13 +27,12 @@ class HowMuch extends React.Component {
                 Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing
                 <input onChange={this.handleChange} value={this.state.value} name="sum" />
             </label>
-            <input  type="submit" value="Submit" />
-            {/* <Link to={{
+            <Link to={{
                 pathname: '/taketest',
                 state: {
                     sum: this.state.value
                 }
-                }}><input  type="submit" value="Submit" /></Link> */}
+                }}><input  type="submit" value="Submit" /></Link>
         </form>
     </div>
     )

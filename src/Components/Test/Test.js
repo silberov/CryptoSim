@@ -13,13 +13,18 @@ const investorTypes = [
 class Test extends React.Component {
     constructor (props) {
         super(props);
-        this.state = { value: [] };
+        this.state = { 
+            spred: [],
+            type:''
+         };
 
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.value});
+        this.setState({spred: event.value});
+        this.setState({type: event.label})
+
     }
     render () {
 
