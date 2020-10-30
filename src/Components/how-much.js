@@ -10,27 +10,33 @@ class HowMuch extends React.Component {
 
     }
     handleChange(event) {
-        console.log(this);
         this.setState({value: event.target.value});
       }
 
     handleSubmit (event) {
-        alert('A name was submitted: ' + this.state.value);
+        //alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
     }
+
     render() {
-        return(
-        <div>
-            <form onSubmit={this.handleSubmit}>
-                <h2>How much would you like to invest?</h2>
-                <label>
-                    Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing
-                    <input onChange={this.handleChange} value={this.state.value} name="sum" />
-                </label>
-                <Link to= "/taketest"><input  type="submit" value="Submit" /></Link>
-            </form>
-        </div>
-        )
+    return(
+      <div>
+        <form onSubmit={this.handleSubmit}>
+            <h2>How much would you like to invest?</h2>
+            <label>
+                Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing
+                <input onChange={this.handleChange} value={this.state.value} name="sum" />
+            </label>
+            <input  type="submit" value="Submit" />
+            {/* <Link to={{
+                pathname: '/taketest',
+                state: {
+                    sum: this.state.value
+                }
+                }}><input  type="submit" value="Submit" /></Link> */}
+        </form>
+    </div>
+    )
     }
 };
 
