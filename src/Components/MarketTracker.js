@@ -67,6 +67,7 @@ class Market extends React.Component {
   render() {
     // console.log("array works outside", cryptoArray);
     console.log("state?", this.state.data)
+   
 
     return (
       <div>
@@ -76,10 +77,11 @@ class Market extends React.Component {
         </div>
         <thead className="thead-dark">
           <ul>
-            <li scope="col">Rank</li>
-            <li scope="col">Logo</li>
-            <li scope="col">Name</li>
-            <li scope="col">Price</li>
+            <li>Rank</li>
+            <li>Logo</li>
+            <li>Name</li>
+            <li>Price</li>
+            <li>Change (24h)</li>
             <li scope="col">Market Cap</li>
           </ul>
         </thead>
@@ -89,9 +91,13 @@ class Market extends React.Component {
 
           {this.state.data.map(info => {
             return (<tr><td>{info.rank}</td>
+              <td>{info.img}</td>
               <td>{info.symbol}</td>
               <td>{info.name}</td>
-              <td></td></tr>)
+              <td>{info.quotes.USD.price}</td>
+              <td>{info.quotes.USD.percent_change_1h}</td>
+              <td>{info.quotes.USD.market_cap}</td>
+              </tr>)
           }
 
 
