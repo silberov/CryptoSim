@@ -1,13 +1,15 @@
 import React from 'react';
 import { Route, BrowserRouter as Router,Link} from "react-router-dom";
 import HowMuch from './Components/how-much'
+import Types from './Components/Types/Type'
 
 
 function App() {
   return (
     <Router>
     <div className="App">
-      <Route component={HomePage} exact path="/"/>
+      <Types />
+      {/* <Route component={HomePage} exact path="/"/>
       <Route component={Market} path= "/market"/>
       <Route component={HowMuch} path= "/howmuch"/>
       <Route component={Test} path= "/taketest"/>
@@ -16,7 +18,7 @@ function App() {
       <Route component={Type3} path= "/type3"/>
       <Route component={Portfolio} path= "/portfolio"/>
       <Route component={Buy} path= "/buy"/>
-      <Route component={Sell} path= "/sell"/>
+      <Route component={Sell} path= "/sell"/> */}
     </div>
     </Router>
   );
