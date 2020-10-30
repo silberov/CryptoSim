@@ -13,25 +13,31 @@ const investorTypes = [
 class Test extends React.Component {
     constructor (props) {
         super(props);
-        this.state = { type: [] };
-        // this.handleChange = this.handleChange.bind(this);
+        this.state = { value: [] };
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
+    handleChange(event) {
+        this.setState({value: event.value});
+        //console.log(event.value)
+    }
     render () {
-        function handleChange(event) {
-            this.setState({type: event.target.value});
-            //console.log(event)
-        }
+
         return (
             <div className="types">
                 <h1>Here you can take the test to find out what kind of investor are you </h1>
                 <button> Take test</button>
                 <h2>If you already know, click one the one</h2>
-                <Select
-                    className="spacer" 
-                    options={investorTypes}
-                    onChange={handleChange}
-                />
+                <form>
+                    <Select
+                        className="spacer" 
+                        options={investorTypes}
+                        onChange={this.handleChange}
+                    />
+                    <input type='submit' value='submit' />
+                </form>
+
 
             </div>
         );
