@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-import './Types.css'
+import './Test.css'
 
 
 const investorTypes = [
@@ -10,7 +10,7 @@ const investorTypes = [
     { value: [40, 20, 20, 10, 10], label: 'Risky' },
   ];
 
-class Types extends React.Component {
+class Test extends React.Component {
     constructor (props) {
         super(props);
         this.state = { type: [] };
@@ -39,4 +39,4 @@ class Types extends React.Component {
 }
 
 
-  export default Types;
+  export default Test;

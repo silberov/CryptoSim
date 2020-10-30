@@ -1,14 +1,15 @@
 import React from 'react';
 import { Route, BrowserRouter as Router,Link} from "react-router-dom";
 import HowMuch from './Components/how-much'
-import Types from './Components/Types/Type'
+import Test from './Components/Types/Test'
 
 
 function App() {
   return (
     <Router>
     <div className="App">
-      <Types />
+      <HowMuch />
+      <Test />
       {/* <Route component={HomePage} exact path="/"/>
       <Route component={Market} path= "/market"/>
       <Route component={HowMuch} path= "/howmuch"/>
@@ -57,20 +58,7 @@ function HomePage(){
 
 
 
-function Test(){
 
-  return(
-    <div>
-      <h1>Here you can take the test to find out what kind of investor are you </h1>
-      <button> Take test</button>
-      <h2>If you already know, click one the one</h2>
-      <Link to = "/type1"><p>Type1</p></Link>
-      <Link to = "/type2"><p>Type2</p></Link>
-      <Link to = "/type3"><p>Type3</p></Link>
-    </div>
-  )
-
-};
 
 function Type1(){
 
