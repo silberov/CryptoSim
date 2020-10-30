@@ -20,7 +20,6 @@ class Test extends React.Component {
 
     handleChange(event) {
         this.setState({value: event.value});
-        //console.log(event.value)
     }
     render () {
 
