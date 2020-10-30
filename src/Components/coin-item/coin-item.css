@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.coinItem {
+  margin: auto;
+  padding: 16px;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.investment,
+.price {
+  text-align: right;
+  font-size: 12px;
+}
+
+.gray {
+  color: gray;
+}
+
+.changePos {
+  color: limegreen;
+}
+
+.changeNeg {
+  color: red;
+}
