@@ -10,8 +10,8 @@ function Navbar() {
         <div className="navbarItems">
             <nav>
                 <ul callName="nav-links">
-                   <li><a>Home</a></li>
-                    <li><a>Market</a></li>
+                   <Link to="/"><li><a>Home</a></li></Link>
+                   <Link to="/marketdata"> <li><a>Market</a></li></Link>
                     <li><a>Portfolio</a></li>
 
                 </ul>
