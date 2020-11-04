@@ -21,3 +21,4 @@ export let cryptoArray = [
   { img: uni, symbol: "UNI" },
   { img: binance, symbol: "BNB" },
 ];
+
