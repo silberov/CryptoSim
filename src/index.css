@@ -1,23 +1,33 @@
 * {
- margin: 0;
- padding:0;
- box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* space-mono-regular - latin */
+
+body {
+  font-family: "poppins";
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Space Mono";
 }
 
 li {
-  list-style-type: none
-
+  list-style-type: none;
 }
 
 a {
-
   text-decoration: none;
 }
 
 nav {
   display: flex;
-  justify-content: center,
-  ;
+  justify-content: center;
   color: white;
   background-color: black;
 }
@@ -37,11 +47,9 @@ ul li {
   word-spacing: -4.2px;
 }
 
-.logo{
-
+.logo {
   display: flex;
   justify-content: center;
   color: white;
   background-color: black;
-
 }

@@ -1,26 +1,20 @@
-
- @media screen and (min-width: 600px) {
-
-  
-
-.thead-dark {
- 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  margin-bottom:20px;
-  background-color: aqua;
-  
-
-
-
+body {
+  font-family: "Space Mono";
 }
 
-.text {
+@media screen and (min-width: 600px) {
+  .thead-dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: aqua;
+  }
 
-  text-align: center;
-}
+  .text {
+    text-align: center;
+  }
 }
 
 .navbarItems {
@@ -28,6 +22,4 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-
 }
-

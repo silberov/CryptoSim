@@ -13,6 +13,7 @@ import {cryptoArray} from './utils/cryptoArray.js';
 import CoinItem from './Components/coin-item/coin-item';
 
 import Coin from './Components/coin-item/coin-item';
+import CoinMarket from './Components/coin-market/coin-market';
 import Market1 from "./Components/MarketTracker";
 
 
@@ -81,10 +82,8 @@ class  App extends React.Component {
  
     <div className="App">
       <HowMuch />
-      
       <Coin />
-
-
+      <CoinMarket />
       <Test />
       <Market coinapi={this.state.data}/>
       <CoinItem />
