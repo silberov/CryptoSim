@@ -1,21 +1,27 @@
 import React from 'react';
 import { Route, BrowserRouter as Router,Link} from "react-router-dom";
 import HowMuch from './Components/how-much/how-much';
-import Navbar from "./Components/Navbar"
-import Logo from "./Components/Logo"
-
+import Navbar from "./Components/NavBar/Navbar"
+import Logo from "./Components/Home/Logo"
+import "./App.css"
 import axios from 'axios'
-import Market from "./Components/MarketTracker.js";
+import Market from "./Components/MarketTracker/MarketTracker";
 import "./App.css";
 import Test from './Components/Test/Test.js'
 import {apiKey} from "./config/config"
 import {cryptoArray} from './utils/cryptoArray.js';
 import CoinItem from './Components/coin-item/coin-item';
+import Home from './Components/Home/Home'
 
-import Coin from './Components/coin-item/coin-item';
-import CoinMarket from './Components/coin-market/coin-market';
-import Market1 from "./Components/MarketTracker";
 
+
+
+
+const investorTypes = [
+  { value: [80, 10, 5, 3, 2], label: 'Safe' },
+  { value: [60, 20, 10, 7, 3], label: 'Middle' },
+  { value: [40, 20, 20, 10, 10], label: 'Risky' },
+];
 
 
 class  App extends React.Component {
@@ -79,16 +85,14 @@ class  App extends React.Component {
    
 
   return (
- 
+    <Router>
     <div className="App">
-      <HowMuch />
-      <Coin />
-      <CoinMarket />
-      <Test />
-      <Market coinapi={this.state.data}/>
-      <CoinItem />
+      <Route component={Home} path = "/"  exact/>
+     <Route exact path="/marketdata" render= {()=><Market coinapi={this.state.data} />}></Route>
+     <Route exact path="/takethetest" render= {()=><Test investors={investorTypes} />}></Route>
       <Navbar />
     </div>
+    </Router>
 
   );
 }

@@ -7,6 +7,11 @@
   margin: 1px 0;
 }
 
+.coinSymbol img {
+  height: 40px;
+  width: 40px;
+}
+
 .coinName {
   font-family: "Space Mono";
   font-size: 16px;

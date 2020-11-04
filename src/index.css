@@ -6,17 +6,6 @@
 
 /* space-mono-regular - latin */
 
-body {
-  font-family: "poppins";
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Space Mono";
-}
-
 li {
   list-style-type: none;
 }
