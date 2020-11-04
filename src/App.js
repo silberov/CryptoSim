@@ -9,12 +9,13 @@ import Logo from "./Components/Logo"
 import Market from "./Components/MarketTracker"
 import "./App.css"
 import axios from 'axios';
+import Coin from './Components/coin-item/coin-item';
 
 
-import Logo from "./Components/Logo";
-import Market from "./Components/MarketTracker";
+//import Logo from "./Components/Logo";
+import Market1 from "./Components/MarketTracker";
 import "./App.css";
-import axios from 'axios';
+//import axios from 'axios';
 
 
 
@@ -22,6 +23,10 @@ function App() {
   return (
 
     <div className="App">
+      <HowMuch />
+      <Market1 />
+      <Coin />
+
 
     </div>
 
