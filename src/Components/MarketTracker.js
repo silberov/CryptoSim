@@ -1,30 +1,11 @@
 import React, { useState } from "react";
-import btc from "../Images/btc.svg";
-import eth from "../Images/eth.svg";
-import link from "../Images/link.svg";
-import ada from "../Images/ada.svg";
-import xmr from "../Images/xmr.svg";
-import tether from "../Images/usdt.svg";
-import cro from "../Images/cro.svg";
-import cosmos from "../Images/atom.svg";
-import uni from "../Images/uni.png";
-import binance from "../Images/bnb.svg";
 import axios from "axios";
+import { apiKey } from "../config/config";
+import {cryptoArray} from '../utils/cryptoArray.js';
 
 
 
-let cryptoArray = [
-  { img: btc, symbol: "BTC" },
-  { img: eth, symbol: "ETH" },
-  { img: link, symbol: "LINK" },
-  { img: ada, symbol: "ADA" },
-  { img: xmr, symbol: "XMR" },
-  { img: tether, symbol: "USDT" },
-  { img: cro, symbol: "CRO" },
-  { img: cosmos, symbol: "ATOM" },
-  { img: uni, symbol: "UNI" },
-  { img: binance, symbol: "BNB" },
-];
+
 class Market extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +19,7 @@ class Market extends React.Component {
       .get(url, {
         headers: {
           "x-rapidapi-host": "coinpaprika1.p.rapidapi.com",
-          "x-rapidapi-key": "881aac81e1msh5b35cf46c5be8fcp1aafdbjsnec347adc64a7",
+          "x-rapidapi-key": apiKey,
         },
       })
       .then((response) => {
@@ -112,9 +93,9 @@ class Market extends React.Component {
              <td><img src={info.img} width="25" height="25" className="d-inline-block align-top" alt="" /></td>
               <td>{info.symbol}</td>
               <td>{info.name}</td>
-              <td>{info.quotes.USD.price}</td>
-              <td>{info.quotes.USD.percent_change_1h}</td>
-              <td>{info.quotes.USD.market_cap}</td>
+              <td>{info.quotes.USD.price}    </td>
+              <td>{info.quotes.USD.percent_change_1h}   </td>
+              <td>{info.quotes.USD.market_cap}   </td>
             </tr>)
           }
 
