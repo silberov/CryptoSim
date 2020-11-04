@@ -5,13 +5,15 @@ import Navbar from "./Components/NavBar/Navbar"
 import Logo from "./Components/Home/Logo"
 import "./App.css"
 import axios from 'axios'
-import Market from "./Components/MarketTracker/MarketTracker.js";
+import Market from "./Components/MarketTracker/MarketTracker";
 import "./App.css";
 import Test from './Components/Test/Test.js'
 import {apiKey} from "./config/config"
 import {cryptoArray} from './utils/cryptoArray.js';
 import CoinItem from './Components/coin-item/coin-item';
 import Home from './Components/Home/Home'
+
+
 
 
 

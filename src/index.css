@@ -1,23 +1,22 @@
 * {
- margin: 0;
- padding:0;
- box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-li {
-  list-style-type: none
+/* space-mono-regular - latin */
 
+li {
+  list-style-type: none;
 }
 
 a {
-
   text-decoration: none;
 }
 
 nav {
   display: flex;
-  justify-content: center,
-  ;
+  justify-content: center;
   color: white;
   background-color: black;
 }
@@ -37,11 +36,9 @@ ul li {
   word-spacing: -4.2px;
 }
 
-.logo{
-
+.logo {
   display: flex;
   justify-content: center;
   color: white;
   background-color: black;
-
 }
