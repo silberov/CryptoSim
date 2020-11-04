@@ -15,7 +15,7 @@ class CoinMarket extends React.Component {
             change7d: props.coininfo.quotes.USD.percent_change_7d,
             supply: props.coininfo.total_supply,
         }
-        console.log("coinmaket", props.coininfo)
+        //console.log("coinmaket", props.coininfo)
     }
 
     render () {
