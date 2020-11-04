@@ -10,9 +10,9 @@ function Navbar() {
         <div className="navbarItems">
             <nav>
                 <ul callName="nav-links">
-                    <Link to="/"><li><a>Home</a></li></Link>
-                    <Link to="/market"><li><a>Market</a></li></Link>
-                    <Link to="/portfolio"><li><a>Portfolio</a></li></Link>
+                   <li><a>Home</a></li>
+                    <li><a>Market</a></li>
+                    <li><a>Portfolio</a></li>
 
                 </ul>
             </nav>
