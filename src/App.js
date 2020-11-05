@@ -18,9 +18,9 @@ import Home from './Components/Home/Home'
 
 
 const investorTypes = [
-  { value: [80, 10, 5, 3, 2], label: 'Safe' },
-  { value: [60, 20, 10, 7, 3], label: 'Middle' },
-  { value: [40, 20, 20, 10, 10], label: 'Risky' },
+  { value: [80, 10, 5, 3, 2], label: 'HODLler' },
+  { value: [60, 20, 10, 7, 3], label: 'Early Investor' },
+  { value: [40, 20, 20, 10, 10], label: 'Trader' },
 ];
 
 
@@ -88,8 +88,8 @@ class  App extends React.Component {
     <Router>
     <div className="App">
       <Route component={Home} path = "/"  exact/>
-     <Route exact path="/marketdata" render= {()=><Market coinapi={this.state.data} />}></Route>
-     <Route exact path="/takethetest" render= {()=><Test investors={investorTypes} />}></Route>
+     <Route exact path="/marketdata" render= {()=><Market coinapi={this.state.data} />}/>
+     {/* <Route exact path="/takethetest" render= {()=><Test investors={investorTypes} />}/> */}
       <Navbar />
     </div>
     </Router>
