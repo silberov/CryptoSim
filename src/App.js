@@ -11,7 +11,8 @@ import Test from './Components/Test/Test.js'
 import {apiKey} from "./config/config"
 import {cryptoArray} from './utils/cryptoArray.js';
 import CoinItem from './Components/coin-item/coin-item';
-import Home from './Components/Home/Home'
+import Home from './Components/Home/Home';
+
 
 
 
@@ -29,6 +30,7 @@ class  App extends React.Component {
     super(props);
     this.state = {
       data: [],
+      investmentSum: 0,
     };
   }
   componentDidMount() {
@@ -79,17 +81,27 @@ class  App extends React.Component {
         console.log(err);
       });
   }
+
+
+
   render() {
     // console.log("array works outside", cryptoArray);
-    console.log("state?", this.state.data)
-   
+    //console.log("state?", this.state.data)
+    const getInvestmentSum = (sum) => {
+      
+      this.setState({investmentSum: sum});
+      console.log("invest", this.state.investmentSum);
+    
+    }
 
   return (
     <Router>
     <div className="App">
+      
       <Route component={Home} path = "/"  exact/>
      <Route exact path="/marketdata" render= {()=><Market coinapi={this.state.data} />}></Route>
      <Route exact path="/takethetest" render= {()=><Test investors={investorTypes} />}></Route>
+     <Route exact path="/howmuch" render= {()=><HowMuch sumSubmit={(sum) => getInvestmentSum(sum)} />}></Route>
       <Navbar />
     </div>
     </Router>

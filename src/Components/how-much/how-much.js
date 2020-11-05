@@ -5,16 +5,14 @@ class HowMuch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {value: 0};
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
     }
-    handleChange(event) {
+
+    handleChange = (event) => {
         this.setState({value: event.target.value});
       }
 
-    handleSubmit (event) {
-        //alert('A name was submitted: ' + this.state.value);
+    handleSubmit = (event) => {
+        this.props.sumSubmit(this.state.value)
         event.preventDefault();
     }
 
@@ -23,16 +21,11 @@ class HowMuch extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
             <h2>How much would you like to invest?</h2>
-            <label>
-                Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing
+            
+                <p>Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing</p>
                 <input onChange={this.handleChange} value={this.state.value} name="sum" />
-            </label>
-            {{
-                pathname: '/takethetest',
-                state: {
-                    sum: this.state.value
-                }
-                }}<input  type="submit" value="Submit" />
+            
+                <input  type="submit" value="Submit" />
         </form>
     </div>
     )
