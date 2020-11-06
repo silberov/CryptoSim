@@ -1,48 +1,47 @@
 import React from 'react';
 import Select from 'react-select';
+import { BrowserRouter as Link, Redirect} from "react-router-dom";
 
 import './Test.css'
 
-
-const investorTypes = [
-    { value: [80, 10, 5, 3, 2], label: 'Safe' },
-    { value: [60, 20, 10, 7, 3], label: 'Middle' },
-    { value: [40, 20, 20, 10, 10], label: 'Risky' },
-  ];
+// typeChoice
 
 class Test extends React.Component {
     constructor (props) {
         super(props);
         this.state = { 
-            spred: [],
-            type:''
+            type: {},
+            redirect:false
          };
-
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({spred: event.value});
-        this.setState({type: event.label})
-
+    handleChange = (event) => {
+        this.setState({type: event});
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.typeChoice(this.state.type);
+        setTimeout(()=> this.setState({redirect:true}), 1000);
+        //this.props.typeChoice(event)
+    }
+
     render () {
 
         return (
             <div className="types">
+                {this.state.redirect && <Redirect to="/type" />}
                 <h1>Here you can take the test to find out what kind of investor are you </h1>
                 <button> Take test</button>
                 <h2>If you already know, click one the one</h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <Select
                         className="spacer" 
-                        options={investorTypes}
+                        options={this.props.investorTypes}
                         onChange={this.handleChange}
                     />
                     <input type='submit' value='submit' />
                 </form>
-
-
             </div>
         );
     }

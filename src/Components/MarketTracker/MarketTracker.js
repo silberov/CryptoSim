@@ -38,8 +38,13 @@ class Market extends React.Component {
 
           {choices.map(button => <button value={button.id} onClick={(event) => this.handleDateChange(event)} > {button.text} </button>)}
         </div>
+<<<<<<< HEAD
 
         {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} userChoice={this.state.userChoice} />))})
+=======
+        
+        {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} />))}
+>>>>>>> 5c0fbdf76e44f7b1bf149cbf7520c617f16361ae
 
 
         {/* <caption>
