@@ -1,5 +1,6 @@
 import React from 'react';
-import './coin-market.css'
+import NumericLabel from 'react-pretty-numbers';
+import './coin-market.css';
 
 
 
@@ -21,9 +22,21 @@ class CoinMarket extends React.Component {
         
     }
 
+    render () {
 
+        const priceForm = {
+            'justification': 'R',
+            'locales': 'en-US',
+            'currency':true,
+            'currencyIndicator': 'USD',
+            'precision': 2,
+            'wholenumber': null,
+            'commafy': true,
+            'shortFormat': true,
+            'shortFormatMinValue': 10000,
+            'shortFormatPrecision': 1,
+            };
 
-    render() {
         return (
             <div className='coinMarket'>
                 <div className="coinSymbol">
@@ -44,7 +57,7 @@ class CoinMarket extends React.Component {
                     </p>
                 </div>
                 <div className="priceMarket">
-                    <p>{this.state.price} $</p>
+                    <NumericLabel params={priceForm}>{this.state.price}</NumericLabel>
 
                 </div>
             </div>

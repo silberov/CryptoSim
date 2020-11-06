@@ -11,7 +11,8 @@ function Navbar() {
             <nav>
                 <ul callName="nav-links">
                    <Link to="/"><li><a>Home</a></li></Link>
-                   <Link to="/marketdata"> <li><a>Market</a></li></Link>
+                   <Link to="/marketdata"><li><a>Market</a></li></Link>
+                   <Link to="/howmuch"><li>How much</li></Link>
                     <li><a>Portfolio</a></li>
 
                 </ul>

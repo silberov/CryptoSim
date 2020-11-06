@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import CoinMarket from '../coin-market/coin-market'
+import CoinMarket from '../coin-market/coin-market';
+import HowMuch from '../how-much/how-much';
+
 
 
 
@@ -38,6 +40,7 @@ class Market extends React.Component {
         </div>
 
         {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} userChoice={this.state.userChoice} />))})
+
 
         {/* <caption>
           Data Source:
