@@ -14,7 +14,7 @@ function HomePage() {
                 We wish you good luck in becoming your own bank!
             </h2>
                 <Link to="/howmuch"><button>Take me to the Moon</button></Link>
-               
+              
          </div> 
     )
 
