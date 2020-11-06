@@ -17,9 +17,9 @@ import Home from './Components/Home/Home';
 
 
 const investorTypes = [
-  { value: [{BTC: 80}, 10, 5, 3, 2], label: 'Safe' },
-  { value: [60, 20, 10, 7, 3], label: 'Middle' },
-  { value: [40, 20, 20, 10, 10], label: 'Risky' },
+  { procent: [80, 10, 5, 3, 2], coins: ["BTC", "LINK", "ETH", "USDT", "ATOM"], label: 'HODLler' },
+  { procent: [60, 20, 10, 7, 3], coins: ["ETH", "LINK", "USDT", "XMR", "UNI"], label: 'Early Investor' },
+  { procent: [40, 20, 20, 10, 10], coins: ["ADA", "XMR", "LINK", "BTC", "UNI"], label: 'Trader' },
 ];
 
 
@@ -50,8 +50,7 @@ class  App extends React.Component {
 
         // Add the icons to the state
 
-
-        console.log(marketData);
+        //console.log(marketData);
 
         for (let i = 0; i < cryptoArray.length; i++) {
           // console.log("state?",this.state.data)
@@ -110,8 +109,8 @@ class  App extends React.Component {
       <Route exact path="/marketdata" render= {()=><Market coinapi={this.state.data} />}></Route>
       <Route exact path="/howmuch" render= {()=><HowMuch sumSubmit={(sum) => getInvestmentSum(sum)} />}></Route>
       <Route exact path="/test" render= {()=><Test typeChoice={(type) => getInvestorType(type)} investorTypes={investorTypes} />}></Route>
-      <Route exact path="/type" render= {()=><Type investorType={{ value: [60, 20, 10, 7, 3], label: 'Middle' }} investmentSum={666}/>}></Route>
-      {/* <Route exact path="/type" render= {()=><Type investorType={this.state.investorType} investmentSum={this.state.investmentSum} />}></Route> */}
+      {/* <Route exact path="/type" render= {()=><Type investorType={{ value: [60, 20, 10, 7, 3], label: 'Middle' }} investmentSum={666}/>}></Route> */}
+      <Route exact path="/type" render= {()=><Type investorType={this.state.investorType} investmentSum={this.state.investmentSum} />}></Route>
     </div>
     </Router>
 

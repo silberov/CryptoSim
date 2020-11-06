@@ -30,7 +30,7 @@ class Market extends React.Component {
           <button>7D</button>
         </div>
         
-        {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} />))})
+        {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} />))}
 
 
         {/* <caption>
