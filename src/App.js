@@ -19,9 +19,9 @@ import Home from './Components/Home/Home';
 
 
 const investorTypes = [
-  { value: [80, 10, 5, 3, 2], label: 'Safe' },
-  { value: [60, 20, 10, 7, 3], label: 'Middle' },
-  { value: [40, 20, 20, 10, 10], label: 'Risky' },
+  { value: [80, 10, 5, 3, 2], label: 'HODLler' },
+  { value: [60, 20, 10, 7, 3], label: 'Early Investor' },
+  { value: [40, 20, 20, 10, 10], label: 'Trader' },
 ];
 
 

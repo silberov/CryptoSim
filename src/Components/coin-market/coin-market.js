@@ -12,7 +12,7 @@ class CoinMarket extends React.Component {
             symbol: props.coininfo.symbol,
             price: props.coininfo.quotes.USD.price,
             change1: props.coininfo.quotes.USD.percent_change_1h,
-            change24: props.coininfo.quotes.USD.volume_24h_change_24h,
+            change24: props.coininfo.quotes.USD.percent_change_24h,
             change7d: props.coininfo.quotes.USD.percent_change_7d,
             supply: props.coininfo.total_supply,
         }
