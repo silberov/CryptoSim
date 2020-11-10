@@ -4,25 +4,26 @@ import { BrowserRouter as Link, Redirect} from "react-router-dom";
 class HowMuch extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: 0};
+        this.state = {sum: 0};
     }
 
     handleChange = (event) => {
-        this.setState({value: event.target.value});
-        console.log(event.target.value);
+        this.setState({sum: event.target.value});
+        this.props.sumSubmit(event.target.value);
+        //console.log(this.state.sum);
       }
 
     handleSubmit = (event) => {
       event.preventDefault();
-      console.log("state", this.state.value);
-        this.props.sumSubmit(this.state.value);
+      //console.log("state", this.state.sum);
+        //this.props.sumSubmit(this.state.sum);
       setTimeout(()=> this.setState({redirect:true}), 1000)
     }
 
     render() {
     return(
       <div>
-              {this.state.redirect && <Redirect to="/test" />}
+        {this.state.redirect && <Redirect to="/test" />}
         <form onSubmit={this.handleSubmit}>
             <h2>How much would you like to invest?</h2>
             
