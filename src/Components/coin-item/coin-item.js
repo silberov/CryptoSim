@@ -1,4 +1,5 @@
 import React from 'react';
+import NumericLabel from 'react-pretty-numbers';
 import './coin-item.css'
 
 class CoinItem extends React.Component {
@@ -6,26 +7,41 @@ class CoinItem extends React.Component {
         super(props);
         this.state  = {
             coinInvested: {
-                symbol: "BTC", 
-                amount : 3,
+                symbol: this.props.item.coin, 
+                amount : this.props.item.amount,
+                name: this.props.item.name,
+                icon: this.props.item.icon,
+                gray: this.props.item.gray
             },
             coinMarket: {
-                icon: 'https://s2.coinmarketcap.com/static/img/coins/32x32/1.png',
                 price: 13636.32,
                 change: -0.21
             }
+            
 
         }
     }
     render () {
+        const priceForm = {
+            'justification': 'R',
+            'locales': 'en-US',
+            'currency':true,
+            'currencyIndicator': 'USD',
+            'precision': 2,
+            'wholenumber': null,
+            'commafy': true,
+            'shortFormat': true,
+            'shortFormatMinValue': 10000,
+            'shortFormatPrecision': 1,
+            };
         return (
             <div className='coinItem'>
                 <div className="coinSymbol">
-                    <img src={this.state.coinMarket.icon} alt=""/>
+                    <img src={this.state.coinInvested.icon} alt=""/>
                 </div>
-                <h3>Bitcoin</h3>
+                <h3>{this.state.coinInvested.name}</h3>
                 <div className="price">
-                    <p>{this.state.coinMarket.price} $</p>
+                    <NumericLabel params={priceForm}>{this.state.coinMarket.price}</ NumericLabel>
                     <p className={`${this.state.coinMarket.change > 0 
                     ? 'changePos' 
                     : 'changeNeg'}`}>
@@ -33,8 +49,8 @@ class CoinItem extends React.Component {
                     </p>
                 </div>
                 <div className="investment">
-                    <p>{this.state.coinInvested.amount * this.state.coinMarket.price} $</p>
-                    <p className="gray">{this.state.coinInvested.amount} {this.state.coinInvested.symbol}</p>
+                    <NumericLabel params={priceForm}>{this.state.coinInvested.amount * this.state.coinMarket.price}</ NumericLabel>
+                    <p className="gray">{this.state.coinInvested.gray}</p>
                 </div>
             </div>
         );

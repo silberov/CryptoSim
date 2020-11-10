@@ -27,7 +27,6 @@ class Market extends React.Component {
   }
 
   render(props) {
-    //console.log("yo?", this.props.coinapi)
     return (
       <div>
         <div class="text">
@@ -43,13 +42,6 @@ class Market extends React.Component {
         {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} userChoice={this.state.userChoice} />))})
        
 
-
-        {/* <caption>
-          Data Source:
-          <a target="_blank" rel="noopener noreferrer" href="https://coinpaprika.com/">
-            coinpaprika
-          </a>
-        </caption> */}
       </div>
     );
   }

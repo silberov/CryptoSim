@@ -27,6 +27,7 @@ class Test extends React.Component {
     }
 
     render () {
+        console.log(this.props)
 
         return (
             <div className="types">
@@ -38,6 +39,8 @@ class Test extends React.Component {
                     <Select
                         className="spacer" 
                         options={this.props.investorTypes}
+                        getOptionLabel={(type) => type.type}
+                        getOptionValue={type => type.type}
                         onChange={this.handleChange}
                     />
                     <input type='submit' value='submit' />

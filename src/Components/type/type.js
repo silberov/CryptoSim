@@ -6,22 +6,25 @@ class Type extends Component {
         super(props);
         this.state= { 
             currentType: this.props.investorType,
-            sum: this.props.investmentSum,
+            sum: this.props.sum,
+            portfolio: []
 
         }
+        this.props.buildPortfolio(this.state.sum, this.state.currentType.plan, this.props.marketData)
 
+    }
+    componentDidMount() {
+        this.setState({ portfolio: this.props.buildPortfolio(this.state.sum, this.state.currentType.plan, this.props.marketData) })
     }
     
     render() {
-
+        console.log(this.props);
         return (
             <div>
-                <h2>{this.state.currentType.label} Invrstor Type</h2>
-                <CoinItem />
-                <CoinItem />
-                <CoinItem />
-                <CoinItem />
-                <CoinItem />
+
+                <h2>{this.state.currentType.type}</h2>
+                <p>{this.state.currentType.text}</p>
+                {this.state.portfolio && this.state.portfolio.map((item) => <CoinItem item={item} />)}
             </div>
         );
     }
