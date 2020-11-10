@@ -8,7 +8,6 @@ class CoinMarket extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userChoice: "change24",
             icon: props.coininfo.img,
             name: props.coininfo.name,
             rank: props.coininfo.rank,
@@ -50,9 +49,9 @@ class CoinMarket extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <p className={`${this.state.change24 > 0
+                    <p className={`${this.state.userChoice > 0
                         ? 'changePos'
-                        : 'changeNeg'}`}>
+                        : 'changeNeg' }`}>
                         {this.state[this.props.userChoice]} %
                     </p>
                 </div>
