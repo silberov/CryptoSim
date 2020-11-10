@@ -33,6 +33,9 @@ class  App extends React.Component {
     };
   }
   componentDidMount() {
+
+     const fetchFunction = () => {
+    
     const url = "https://coinpaprika1.p.rapidapi.com/tickers";
     axios
       .get(url, {
@@ -76,6 +79,8 @@ class  App extends React.Component {
         console.log(err);
       });
   }
+  fetchFunction()
+}
 
 
 

@@ -2,10 +2,12 @@ import React from 'react';
 import NumericLabel from 'react-pretty-numbers';
 import './coin-market.css';
 
+
+
 class CoinMarket extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
-        this.state  = {
+        this.state = {
             icon: props.coininfo.img,
             name: props.coininfo.name,
             rank: props.coininfo.rank,
@@ -16,7 +18,7 @@ class CoinMarket extends React.Component {
             change7d: props.coininfo.quotes.USD.percent_change_7d,
             supply: props.coininfo.total_supply,
         }
-        //console.log("coinmaket", props.coininfo)
+        
     }
 
     render () {
@@ -37,7 +39,7 @@ class CoinMarket extends React.Component {
         return (
             <div className='coinMarket'>
                 <div className="coinSymbol">
-                    <img src={this.state.icon} alt=""/>
+                    <img src={this.state.icon} alt="" />
                 </div>
                 <div>
                     <p className="coinName">{this.state.name}</p>
@@ -47,10 +49,10 @@ class CoinMarket extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <p className={`${this.state.change24 > 0 
-                        ? 'changePos' 
-                        : 'changeNeg'}`}>
-                            {this.state.change24}%
+                    <p className={`${this.state.userChoice > 0
+                        ? 'changePos'
+                        : 'changeNeg' }`}>
+                        {this.state[this.props.userChoice]} %
                     </p>
                 </div>
                 <div className="priceMarket">
