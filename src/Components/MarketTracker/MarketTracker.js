@@ -6,12 +6,24 @@ import HowMuch from '../how-much/how-much';
 
 
 
+const choices = [
+  { id: "change24", text: "24H" },
+  { id: "change1", text: "1H" },
+  { id: "change7d", text: "7D" }
+]
 
 class Market extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      userChoice:"change24"
+      // data: this.props.coinapi
     };
+  }
+
+  handleDateChange(event) {
+
+    this.setState({ userChoice: event.target.value })
   }
 
   render(props) {
@@ -20,15 +32,15 @@ class Market extends React.Component {
         <div class="text">
           <h2 class="text">Current market data</h2>
           <p>Here you can see the up to date market data.</p>
-          
+
         </div>
         <div>
-          <button>1H</button>
-          <button>24H</button>
-          <button>7D</button>
-        </div>
         
-        {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} />))}
+          {choices.map(button => <button value={button.id} onClick={(event) => this.handleDateChange(event)} > {button.text} </button>)}
+        </div>
+
+        {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} userChoice={this.state.userChoice} />))})
+       
 
       </div>
     );
