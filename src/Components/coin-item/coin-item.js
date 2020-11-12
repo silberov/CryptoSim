@@ -7,11 +7,11 @@ class CoinItem extends React.Component {
         super(props);
         this.state  = {
             coinInvested: {
-                symbol: this.props.item.coin, 
+                symbol: this.props.item.symbol, 
                 amount : this.props.item.amount,
                 name: this.props.item.name,
                 icon: this.props.item.icon,
-                gray: this.props.item.gray
+                gray: this.props.item.procent
             },
             coinMarket: {
                 price: 13636.32,
