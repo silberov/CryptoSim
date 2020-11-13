@@ -49,7 +49,7 @@ class CoinMarket extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <p className={`${this.state.userChoice > 0
+                    <p className={`${this.state[this.props.userChoice] > 0
                         ? 'changePos'
                         : 'changeNeg' }`}>
                         {this.state[this.props.userChoice]} %
