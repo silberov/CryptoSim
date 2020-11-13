@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CoinContainer from "../coin-container/CoinContainer";
 
-function Portfolio () {
+function Portfolio (props) {
     return (
         <div>
             <div>
@@ -9,8 +9,7 @@ function Portfolio () {
             <div><p>change</p></div>
             </div>
             <div className="chart"></div>
-            <CoinContainer />
-            
+            <CoinContainer portfolio={props.portfolioData} marketData={props.marketData} inPortfolio={true} />
         </div>
     );
 }

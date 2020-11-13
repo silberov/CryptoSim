@@ -14,13 +14,12 @@ class CoinItem extends React.Component {
                 gray: this.props.item.procent
             },
             coinMarket: {
-                price: 13636.32,
-                change: -0.21
+                price: this.props.item.marketinfo.ath_price,
+                change: this.props.item.marketinfo.percent_change_7d
             }
-            
-
         }
     }
+    
     render () {
         const priceForm = {
             'justification': 'R',
@@ -34,6 +33,7 @@ class CoinItem extends React.Component {
             'shortFormatMinValue': 10000,
             'shortFormatPrecision': 1,
             };
+            //console.log("item", this.props);
         return (
             <div className='coinItem'>
                 <div className="coinSymbol">

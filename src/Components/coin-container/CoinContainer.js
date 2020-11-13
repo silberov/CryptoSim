@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
 import CoinItem from '../coin-item/coin-item';
-//marketData, portfolio, inPortfolio
-function CoinContainer (props) {
-    const matchCoins  = (portfolio, marketData) => {
-        for (let i = 0; i < portfolio.length; i++) {
-            for (let j = 0; j < marketData.length; j++) {
+import './CoinContainer.css'
 
-            }
-        }
-        // const display = 
-    }
-    
-    
+
+function CoinContainer (props) {
+    // const [count, setCount] = useState(0);
+
     return (
         <div>
             <div className="headline">
                 <p>Currency</p>
                 <p>Price</p>
-                <p>{inPortfolio ? "Balance" : "Distribution"}</p>
+                <p>{props.inPortfolio ? "Balance" : "Distribution"}</p>
             </div>
-            {portfolio.map((coin) => {marketData.map((marketCoin) =>)coin.symbol === }<CoinItem item={coin} />)}
+            {props.portfolio.map((item) => <CoinItem item={item} />)}
         </div>
         
     );
