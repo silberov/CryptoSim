@@ -4,8 +4,7 @@ import './CoinContainer.css'
 
 
 function CoinContainer (props) {
-    // const [count, setCount] = useState(0);
-
+    //console.log('re-render', props)
     return (
         <div>
             <div className="headline">
@@ -13,7 +12,12 @@ function CoinContainer (props) {
                 <p>Price</p>
                 <p>{props.inPortfolio ? "Balance" : "Distribution"}</p>
             </div>
-            {props.portfolio.map((item) => <CoinItem item={item} />)}
+            {props.portfolio && props.portfolio.map((item) => 
+            <CoinItem name={item.name} 
+            icon={item.icon} 
+            marketinfo={item.marketinfo}
+            amount={item.amount}
+            gray={props.inPortfolio ? (`${Math.round(item.amount * 100) / 100} ${item.symbol}`) : item.procent}/>)}
         </div>
         
     );

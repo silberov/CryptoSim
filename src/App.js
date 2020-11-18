@@ -10,8 +10,12 @@ import Test from './Components/Test/Test.js'
 import {apiKey} from "./config/config"
 import {cryptoArray} from './utils/cryptoArray.js';
 import Home from './Components/Home/Home';
+<<<<<<< HEAD
 import Portfolio from './Portfolio/Portfolio';
 import styled from 'styled-components';
+=======
+import Portfolio from './Components/Portfolio/Portfolio';
+>>>>>>> cead2621eceadf05c4e10945302f68d24fda66de
 
 
 
@@ -21,7 +25,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      invSum: 0,
+      invSum: 100,
       investorType: {},
       portfolio: []
     };
@@ -73,6 +77,7 @@ class App extends React.Component {
     //this function gets the type from test page and puts it in the state
     const getInvestorType = (type) => {
       this.setState({investorType: type});
+      console.log("gettype", type)
     }
 
 
@@ -106,7 +111,11 @@ class App extends React.Component {
         ]}
       ]
 
-    const portfolioFirstBuild = (iSum, plan, marketData) => {
+
+    //this function returns the portfolioacording to the given plan and the market data
+    const portfolioFirstBuild = (iSum, plan) => {
+      this.fetchFunction()
+      const marketData = this.state.data;
       //console.log("para", iSum, plan, marketData);
       let firstPortfolio = [];
       if (plan && iSum > 0) {
@@ -128,8 +137,23 @@ class App extends React.Component {
       }
         console.log("portfolio", firstPortfolio);
         this.setState({portfolio: firstPortfolio});
-    
+        // setTimeout(() => {
+        //   console.log(this.state.portfolio)
+        // }, 1000);
       return firstPortfolio
+    }
+
+
+    // the function updates the portfolio with the market data
+    const updateValues = (portfolio) => {
+      this.fetchFunction()
+      for  (let i =  0; i < portfolio.length; i++) {
+        for (let j = 0; j < this.state.data.length; j++) {
+          if (portfolio[i].id  === this.state.data[j].id) {
+            portfolio[i].marketinfo = this.state.data[j].quotes.USD
+          }
+        }
+      }
     }
      
     //const portfolio = [{coin: "BTC", amout: 3}, {coin: "BTC", amout: 3}, {coin: "BTC", amout: 3}]
@@ -144,8 +168,13 @@ class App extends React.Component {
       <Route exact path="/test" render= {()=><Test typeChoice={(type) => getInvestorType(type)} investorTypes={investorTypes} />}></Route>
       {/* <Route exact path="/type" render= {()=><Type investorType={{ value: [60, 20, 10, 7, 3], label: 'Middle' }} investmentSum={666}/>}></Route> */}
       <Route exact path="/type" render= {()=><Type investorType={this.state.investorType} allTypes={investorTypes} sum={this.state.invSum} typeChoice={(type) => getInvestorType(type)} marketData={this.state.data} portfolio={this.state.portfolio} buildPortfolio={portfolioFirstBuild} />}></Route>
+<<<<<<< HEAD
       <Route exact path="/portfolio" component={Portfolio} />
       <Navbar />
+=======
+      <Route exact path="/portfolio" render= {()=><Portfolio portfolio={this.state.portfolio} />} />
+    
+>>>>>>> cead2621eceadf05c4e10945302f68d24fda66de
     </div>
     </Router>
 
