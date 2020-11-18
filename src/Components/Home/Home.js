@@ -32,6 +32,7 @@ height: 50px;
 text-align: center;
 box-shadow: 8px 8px;
 `
+// Code for Component starts here
 function HomePage() {
 
     return (
@@ -55,3 +56,4 @@ function HomePage() {
 
 
 export default HomePage;
+export {Button};

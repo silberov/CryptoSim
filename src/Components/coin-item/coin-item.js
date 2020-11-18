@@ -1,6 +1,25 @@
 import React from 'react';
 import NumericLabel from 'react-pretty-numbers';
 import './coin-item.css'
+import styled from 'styled-components'
+
+
+const CoinItemDiv= styled.div`
+margin: auto;
+padding: 16px;
+background-color:rgba(16, 24, 32, 1);
+border: 1px solid rgba(223, 249, 255, 1);
+display: flex;
+justify-content: space-between;
+align-items: center;`
+
+
+const CoinNames=styled.h3 `
+color:rgba(223, 249, 255, 1);
+text-shadow: 2px 2px rgba(251, 59, 108, 1);
+font-size: 1rem;`
+
+
 
 function CoinItem (props) {
 
@@ -29,11 +48,11 @@ function CoinItem (props) {
         };
 
     return (
-        <div className='coinItem'>
+        <CoinItemDiv>
             <div className="coinSymbol">
                 <img src={props.icon} alt={`symbol of ${props.name}`}/>
             </div>
-            <h3>{props.name}</h3>
+            <CoinNames>{props.name}</CoinNames>
             <div className="price">
                 <NumericLabel params={priceForm}>{props.marketinfo.ath_price}</ NumericLabel>
                 <p className={`${props.marketinfo.percent_change_7d > 0 
@@ -46,7 +65,7 @@ function CoinItem (props) {
                 <NumericLabel params={priceForm}>{props.amount * props.marketinfo.ath_price}</ NumericLabel>
                 <p className="gray">{props.gray}</p>
             </div>
-        </div>
+        </CoinItemDiv>
     );
 
 }
