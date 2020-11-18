@@ -10,7 +10,8 @@ import Test from './Components/Test/Test.js'
 import {apiKey} from "./config/config"
 import {cryptoArray} from './utils/cryptoArray.js';
 import Home from './Components/Home/Home';
-import Portfolio from './Components/Portfolio/Portfolio';
+import Portfolio from './Components/portfolio/Portfolio';
+import styled from 'styled-components';
 
 
 
@@ -156,7 +157,7 @@ class App extends React.Component {
   return (
     <Router>
     <div className="App">
-      <Navbar />
+     
       <Route component={Home} path = "/"  exact/>
       <Route exact path="/marketdata" render= {()=><Market coinapi={this.state.data} />}></Route>
       <Route exact path="/howmuch" render= {()=><HowMuch sumSubmit={(sum) => getInvestmentSum(sum)} />}></Route>
@@ -164,7 +165,7 @@ class App extends React.Component {
       {/* <Route exact path="/type" render= {()=><Type investorType={{ value: [60, 20, 10, 7, 3], label: 'Middle' }} investmentSum={666}/>}></Route> */}
       <Route exact path="/type" render= {()=><Type investorType={this.state.investorType} allTypes={investorTypes} sum={this.state.invSum} typeChoice={(type) => getInvestorType(type)} marketData={this.state.data} portfolio={this.state.portfolio} buildPortfolio={portfolioFirstBuild} />}></Route>
       <Route exact path="/portfolio" render= {()=><Portfolio portfolio={this.state.portfolio} />} />
-    
+    <Navbar/>
     </div>
     </Router>
 
