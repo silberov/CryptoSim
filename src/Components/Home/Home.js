@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 import styled from 'styled-components';
 
-
+// CSS
 const Title = styled.h1`
 color: rgba(223, 249, 255, 1);
 font-size: 2rem;
