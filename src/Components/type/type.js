@@ -13,7 +13,7 @@ padding: 10px;
 margin-top: 15px;
 margin-bottom: 15px
 `
-const InvestorTitle = styled.h2 `
+const TitleH2 = styled.h2 `
 text-shadow: 2px 2px rgba(251, 59, 108, 1);
 `
 const Button = styled.button `
@@ -68,7 +68,7 @@ class Type extends Component {
                     value={this.currentType}
                     onChange={(event) => this.props.typeChoice(event)}
                     />
-                <InvestorTitle>{this.props.investorType.type}</InvestorTitle>
+                <TitleH2>{this.props.investorType.type}</TitleH2>
                 <p>{this.props.investorType.text}</p>
                 {this.props.portfolio && <CoinContainer portfolio={this.props.portfolio} inPortfolio={false} />}
                 {/* {this.state.portfolio && <CoinContainer portfolio={this.state.portfolio} inPortfolio={false} />} */}

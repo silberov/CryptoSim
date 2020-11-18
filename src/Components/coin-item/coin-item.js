@@ -3,7 +3,7 @@ import NumericLabel from 'react-pretty-numbers';
 import './coin-item.css'
 import styled from 'styled-components'
 
-
+//CSS
 const CoinItemDiv= styled.div`
 margin: auto;
 padding: 16px;
@@ -19,7 +19,7 @@ color:rgba(223, 249, 255, 1);
 text-shadow: 2px 2px rgba(251, 59, 108, 1);
 font-size: 1rem;`
 
-
+// Component Code
 
 function CoinItem (props) {
 
