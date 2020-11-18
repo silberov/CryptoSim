@@ -14,8 +14,8 @@ color: rgba(223, 249, 255, 1);
 font-size: 1.2rem;
 `
 const DivBackground = styled.div`
-background-color: rgba(0, 15, 30, 1);
-opacity: 0.85;
+background-color:rgba(0, 15, 30, 0.85);
+
 text-align:center;
 padding: 10px;
 margin-top: 15px;
