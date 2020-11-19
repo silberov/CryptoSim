@@ -1,6 +1,7 @@
 body {
   font-family: "Space Mono";
   background-image: url("./Components/CSS/background.png");
+  color:rgba(223, 249, 255, 1)
 }
 
 @media screen and (min-width: 600px) {

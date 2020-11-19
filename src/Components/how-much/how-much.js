@@ -1,6 +1,47 @@
 import React from 'react';
 import { BrowserRouter as Link, Redirect} from "react-router-dom";
+import styled from 'styled-components';
+import styles from 'styled-components'
 
+//CSS
+
+const DivBackground = styled.div`
+background-color:rgba(0, 15, 30, 0.85);
+text-align:center;
+padding: 10px;
+margin-top: 15px;
+margin-bottom: 15px
+`
+const Title=styled.h2 `
+text-shadow: 2px 2px rgba(251, 59, 108, 1);
+text-align:center`
+
+const Intro = styled.p`
+color: rgba(223, 249, 255, 1);
+font-size: 1.2rem;
+`
+
+const Inputfield=styled.input`
+background-color:rgba(148, 163, 167, 1);
+display:flex;
+align-item:center;
+height:40px;
+width:380px;
+border:1.5px solid black;
+
+`
+const Button = styled.input `
+
+font-family: "Space Mono";
+font-weight: bold;
+background-color:rgba(183, 207, 214, 1);
+font-size: 0.9rem;
+width: 200px;
+height: 50px;
+text-align: center;
+box-shadow: 8px 8px;
+`
+//Component Code
 class HowMuch extends React.Component {
     constructor(props) {
         super(props);
@@ -22,17 +63,23 @@ class HowMuch extends React.Component {
 
     render() {
     return(
-      <div>
+      <DivBackground>
         {this.state.redirect && <Redirect to="/test" />}
         <form onSubmit={this.handleSubmit}>
-            <h2>How much would you like to invest?</h2>
+            <Title>How much would you like to invest?</Title>
+            <br></br>
             
-                <p>Text explaining the steplorem ipsum dolor sit amet, consectetur adipiscing</p>
-                <input onChange={this.handleChange} value={this.state.value} name="sum" />
+                <Intro>Here you can decide, how much of your FIAT you would like to turn into Magic Internet Money.
+                  <br></br>
+                   We advise you to stay realistic so you can get and idea of how Crypto Currencies work in real life.
+                </Intro>
+                <br></br> 
+                <Inputfield onChange={this.handleChange} value={this.state.value} name="sum" />
+                <br></br>
             
-                <input type="submit" value="Submit" />
+                <Button type="submit" value="Submit" />
         </form>
-    </div>
+    </DivBackground>
     )
     }
 };

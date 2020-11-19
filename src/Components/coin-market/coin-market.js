@@ -1,9 +1,26 @@
 import React from 'react';
 import NumericLabel from 'react-pretty-numbers';
 import './coin-market.css';
+import styled from 'styled-components'
+import CoinItem from '../coin-item/coin-item';
 
 
+//CSS
+const CoinNames=styled.h3 `
+color:rgba(223, 249, 255, 1);
+text-shadow: 2px 2px rgba(251, 59, 108, 1);
+font-size: 1rem;`
 
+const CoinItemDiv= styled.div`
+margin: auto;
+padding: 16px;
+background-color:rgba(16, 24, 32, 1);
+border: 1px solid rgba(223, 249, 255, 1);
+display: flex;
+justify-content: space-between;
+align-items: center;`
+
+//Copmponent Code
 class CoinMarket extends React.Component {
     constructor(props) {
         super(props);
@@ -37,12 +54,12 @@ class CoinMarket extends React.Component {
             };
 
         return (
-            <div className='coinMarket'>
+            <CoinItemDiv>
                 <div className="coinSymbol">
                     <img src={this.state.icon} alt="" />
                 </div>
                 <div>
-                    <p className="coinName">{this.state.name}</p>
+                    <CoinNames>{this.state.name}</CoinNames>
                     <div className="subinfo gray">
                         <p className="rank">{this.state.rank}</p>
                         <p className="symbol">{this.state.symbol}</p>
@@ -59,7 +76,7 @@ class CoinMarket extends React.Component {
                     <NumericLabel params={priceForm}>{this.state.price}</NumericLabel>
 
                 </div>
-            </div>
+            </CoinItemDiv>
         );
     }
 }
