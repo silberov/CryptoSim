@@ -10,7 +10,7 @@ import Test from './Components/Test/Test.js'
 import {apiKey} from "./config/config"
 import {cryptoArray} from './utils/cryptoArray.js';
 import Home from './Components/Home/Home';
-import Portfolio from './Components/portfolio/Portfolio';
+import Portfolio from './Components/Portfolio/Portfolio';
 import styled from 'styled-components';
 
 

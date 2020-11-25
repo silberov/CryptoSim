@@ -43,8 +43,7 @@ class Type extends Component {
     handleChange = (event) => {
         this.props.typeChoice(event);
         //this.setState({currentType: event});
-        console.log("event" ,event);
-        //console.log("event", event);
+        //console.log("event" ,event);
         //console.log(this.props.buildPortfolio(this.state.sum, this.state.currentType.plan, this.props.marketData)) 
     }
 
@@ -57,7 +56,7 @@ class Type extends Component {
     
     
     render() {
-        console.log("type props", this.props);
+        //console.log("type props", this.props);
         return (
             <DivBackground>
                 <Select
