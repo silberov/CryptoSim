@@ -157,6 +157,7 @@ class App extends React.Component {
   return (
     <Router>
     <div className="App">
+      <div className="Container">
      
       <Route component={Home} path = "/"  exact/>
       <Route exact path="/marketdata" render= {()=><Market coinapi={this.state.data} />}></Route>
@@ -166,6 +167,7 @@ class App extends React.Component {
       <Route exact path="/type" render= {()=><Type investorType={this.state.investorType} allTypes={investorTypes} sum={this.state.invSum} typeChoice={(type) => getInvestorType(type)} marketData={this.state.data} portfolio={this.state.portfolio} buildPortfolio={portfolioFirstBuild} />}></Route>
       <Route exact path="/portfolio" render= {()=><Portfolio portfolio={this.state.portfolio} />} />
     <Navbar/>
+    </div>
     </div>
     </Router>
 
