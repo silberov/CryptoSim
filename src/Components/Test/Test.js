@@ -1,8 +1,26 @@
 import React from 'react';
 import Select from 'react-select';
 import { BrowserRouter as Link, Redirect} from "react-router-dom";
+import styled from 'styled-components'
 
-import './Test.css'
+//CSS
+
+
+const Button = styled.input `
+
+font-family: "Space Mono";
+font-weight: bold;
+background-color:rgba(183, 207, 214, 1);
+font-size: 0.9rem;
+width: 200px;
+height: 50px;
+text-align: center;
+box-shadow: 8px 8px;`
+
+
+const TitleH2 = styled.h2 `
+text-shadow: 2px 2px rgba(251, 59, 108, 1);`
+
 
 // typeChoice
 
@@ -30,11 +48,19 @@ class Test extends React.Component {
         console.log(this.props)
 
         return (
-            <div className="types">
+            <div className="Container">
+            <div className="DivBackground">
                 {this.state.redirect && <Redirect to="/type" />}
-                <h1>Here you can take the test to find out what kind of investor are you </h1>
-                <button> Take test</button>
-                <h2>If you already know, click one the one</h2>
+                <TitleH2>Here you can take the test to find out what kind of investor are you </TitleH2>
+                <p>Investing comes with great responsibilty and it is closely correlated with your personality and goals.
+                    If you want to find more out about what type of investor you are, you can read this article.
+                   
+                </p>
+               <br></br>
+            <TitleH2>    <a href="https://www.interactivecrypto.com/types-of-crypto-traders"  > Go to article</a> </TitleH2>
+            <br></br>
+                <TitleH2>If you already know, you can just select the one from here:</TitleH2>
+                <br></br>
                 <form onSubmit={this.handleSubmit}>
                     <Select
                         className="spacer" 
@@ -43,8 +69,10 @@ class Test extends React.Component {
                         getOptionValue={type => type.type}
                         onChange={this.handleChange}
                     />
-                    <input type='submit' value='submit' />
+                    <br></br>
+                    <Button type='submit' value='Submit' />
                 </form>
+            </div>
             </div>
         );
     }

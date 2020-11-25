@@ -20,7 +20,7 @@ font-family: "Space Mono";
 font-weight: bold;
 background-color:rgba(183, 207, 214, 1);
 font-size: 0.9rem;
-width: 60px;
+width: 100px;
 height: 30px;
 text-align: center;
 `
