@@ -7,8 +7,8 @@ import NumericLabel from 'react-pretty-numbers';
 function Portfolio(props) {
      const [generalSum, setGeneralSum] = useState(0);
      const [historical, setHistorical] = useState([]);
-     const [lebil, setLebil] = useState(0);
-     let marketData = [];
+ 
+
      
 useEffect(() => {
     calcGeneralSum(props.portfolio);
@@ -18,10 +18,21 @@ useEffect(() => {
     const calcGeneralSum = (portfolio) => {
         let sum = 0;
 
-        for (let i = 0; i < portfolio.length; i++) {
-            sum = sum + (portfolio[i].amount * portfolio[i].marketinfo.ath_price);
-            getHistoricle(portfolio[i].id);            
-        }
+        // for (let i = 0; i < portfolio.length; i++) {
+        //     sum = sum + (portfolio[i].amount * portfolio[i].marketinfo.ath_price);
+        //     getHistoricle(portfolio[i].id);            
+        // }
+
+        const requests = portfolio.map((coin) => {
+            getHistoricle(coin.id);
+            console.log(getHistoricle(coin.id))
+            //sum = sum  + coin.amount * coin.marketinfo.ath_price
+        });
+        Promise.all(requests).then((output) => {
+            console.log(output)
+            setHistorical(output);
+          });
+
         setGeneralSum(sum);
 
     }
@@ -30,20 +41,16 @@ useEffect(() => {
      endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
 
 const getHistoricle = (coinid) => {
-    console.log('historical', historical)
-    // let market = [];
-    fetch(`https://api.coinpaprika.com/v1/coins/${coinid}/ohlcv/historical?start=${startDate}&end=${endDate}`)
+
+    return fetch(`https://api.coinpaprika.com/v1/coins/${coinid}/ohlcv/historical?start=${startDate}&end=${endDate}`)
     .then(resp => resp.json())
     //.then((data) => console.log(data))
-    .then((re) => {
-        console.log("resp", re)
-        // market = {id: coinid, data: re};
-        setHistorical([...historical, {id: coinid, data: re}])
-        // console.log("test", [...historical, =]);
-        // setLebil(lebil + 1);
-
+    .then((data) => {
+        //console.log("resp", data)
+        console.log({id: coinid, market: data})
+        return {id: coinid, market: data}
     });
-    // return market;
+
 }    
 
     const priceForm = {
@@ -61,12 +68,12 @@ const getHistoricle = (coinid) => {
 
 
 
-    console.log("historical", historical)
-    console.log('hello')
+    //console.log("historical", historical)
+    //console.log('hello')
     return(
         <div className="Portfolio">
             <div style={{fontSize: "36px", fontWeight: "bolder"}}>
-                <NumericLabel  params={priceForm}>{generalSum}</NumericLabel>
+                <NumericLabel params={priceForm}>{generalSum}</NumericLabel>
             </div>
             <ChartSum />
             <div className="changeButtons">
