@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Link, Redirect} from "react-router-dom";
 import Select from 'react-select';
 import CoinContainer from '../coin-container/CoinContainer';
 import styled from 'styled-components'
@@ -35,6 +36,9 @@ background-color:rgba(183, 207, 214, 1);
 `
 //Code for Component starts here
 class Type extends Component {
+    state={
+        redirect: false
+    }
 
     componentDidMount() {
         this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData)
@@ -43,8 +47,7 @@ class Type extends Component {
     handleChange = (event) => {
         this.props.typeChoice(event);
         //this.setState({currentType: event});
-        console.log("event" ,event);
-        //console.log("event", event);
+        //console.log("event" ,event);
         //console.log(this.props.buildPortfolio(this.state.sum, this.state.currentType.plan, this.props.marketData)) 
     }
 
@@ -57,9 +60,10 @@ class Type extends Component {
     
     
     render() {
-        console.log("type props", this.props);
+        //console.log("type props", this.props);
         return (
             <DivBackground>
+                {this.state.redirect && <Redirect to="/portfolio" />}
                 <Select
                     className="spacer" 
                     options={this.props.allTypes}
@@ -74,7 +78,7 @@ class Type extends Component {
                 {/* {this.state.portfolio && <CoinContainer portfolio={this.state.portfolio} inPortfolio={false} />} */}
                 {/* {this.state.portfolio && this.state.portfolio.map((item) => <CoinItem item={item} />)} */}
                <br></br>
-                <Button>Invest</Button>
+                <Button onClick={()=> this.setState({redirect: true})}>Invest</Button>
             </DivBackground>
         );
     }

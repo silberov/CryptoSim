@@ -37,10 +37,10 @@ class ChartSum extends React.Component {
 
         return(
             <div> 
-            <h3>SUM of Portfolio Displayed Here</h3>
-           <div className="chart"> 
-            <Line data={data}/>
-            </div>
+                <h3>SUM of Portfolio Displayed Here</h3>
+                <div className="chart"> 
+                    <Line data={data}/>
+                </div>
             </div>
 
         )
