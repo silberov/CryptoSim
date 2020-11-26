@@ -23,14 +23,15 @@ const getHistoricle = (coinid) => {
 function Portfolio(props) {
      const [generalSum, setGeneralSum] = useState(0);
      const [historical, setHistorical] = useState([]);
- 
+     const [chartData, setChartData] = useState([]);
+     const [chartLabels, setChartLabels] = useState([]);
 
      
 useEffect(() => {
     calcGeneralSum(props.portfolio);
-
+    //let sum = 0;
     const requests = props.portfolio.map(coin => getHistoricle(coin.id));
-        // console.log(getHistoricle(coin.id))
+
         //sum = sum  + coin.amount * coin.marketinfo.ath_price
     Promise.all(requests).then((output) => {
         console.log(output)
@@ -39,13 +40,39 @@ useEffect(() => {
 
 }, []);
 
+useEffect(() => {
+    historical[0] && buildChartData(props.portfolio, historical)
+}, [historical])
+
 
     const calcGeneralSum = (portfolio) => {
         let sum = 0;
-
-
+        portfolio.map((coin) => sum = sum  + (coin.amount * coin.marketinfo.ath_price))
+        console.log("sum", sum);
         setGeneralSum(sum);
+    }
 
+    function buildChartData(portfolio, past) {
+        console.log("past", past)
+        let dataInternal = [];
+        let labels = [];
+        for (let i = 0; i < portfolio.length; i++) {
+
+            for (let j = 0; j < past[i].market.length; j++) {
+                if (i === 0) {
+                    //console.log(portfolio[i].amount * past[i].market[j].close)
+                    dataInternal.push(portfolio[i].amount * past[i].market[j].close);
+
+                    //labels.push(past[i].market[j].time_close)
+                } else {
+                    dataInternal[j] =  dataInternal[j] + portfolio[i].amount * past[i].market[j].close
+                }
+                //console.log(past[i].market[j].time_close)
+                //console.log(dataInternal)
+            }
+        }
+        console.log(dataInternal)
+        setChartData(dataInternal)
     }
 
 
@@ -72,7 +99,7 @@ useEffect(() => {
             <div style={{fontSize: "36px", fontWeight: "bolder"}}>
                 <NumericLabel params={priceForm}>{generalSum}</NumericLabel>
             </div>
-            <ChartSum />
+            <ChartSum data={chartData} />
             <div className="changeButtons">
                 <button>1h</button>
                 <button>6h</button>
