@@ -5,28 +5,19 @@ import styles from 'styled-components'
 
 //CSS
 
-const DivBackground = styled.div`
-background-color:rgba(0, 15, 30, 0.85);
-text-align:center;
-padding: 10px;
-margin-top: 15px;
-margin-bottom: 15px
-`
+
+
 const Title=styled.h2 `
 text-shadow: 2px 2px rgba(251, 59, 108, 1);
 text-align:center`
 
-const Intro = styled.p`
-color: rgba(223, 249, 255, 1);
-font-size: 1.2rem;
-`
 
 const Inputfield=styled.input`
 background-color:rgba(148, 163, 167, 1);
 display:flex;
 align-item:center;
 height:40px;
-width:380px;
+width:300px;
 border:1.5px solid black;
 
 `
@@ -63,23 +54,27 @@ class HowMuch extends React.Component {
 
     render() {
     return(
-      <DivBackground>
+      <div className="Container">
+      <div className="DivBackground">
         {this.state.redirect && <Redirect to="/test" />}
         <form onSubmit={this.handleSubmit}>
             <Title>How much would you like to invest?</Title>
             <br></br>
             
-                <Intro>Here you can decide, how much of your FIAT you would like to turn into Magic Internet Money.
+                <p>Here you can decide, how much of your FIAT you would like to turn into Magic Internet Money.
                   <br></br>
                    We advise you to stay realistic so you can get and idea of how Crypto Currencies work in real life.
-                </Intro>
+                   <br></br>
+                   You can type the amount here:
+                </p>
                 <br></br> 
                 <Inputfield onChange={this.handleChange} value={this.state.value} name="sum" />
                 <br></br>
             
                 <Button type="submit" value="Submit" />
         </form>
-    </DivBackground>
+    </div>
+    </div>
     )
     }
 };

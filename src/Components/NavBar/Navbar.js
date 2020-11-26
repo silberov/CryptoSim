@@ -1,15 +1,29 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Link } from "react-router-dom";
-import styles from 'styled-components';
+//CSS
 
+import styled from 'styled-components';
 
+//NavBar Icons
+import HomeIcon from './Imgs/Home.png';
+import InvestIcon from './Imgs/Invest.png';
+import MarketIcon from './Imgs/Market.png';
+import PortfIcon from './Imgs/Portfolio.png';
 
-//CSS 
-const Navigation= styles.div`
-background-color:rgba(183, 207, 214, 1);
-font-size: 0.9rem;
-font-color:black;
-`
+//CSS
+
+const NavbarDiv=styled.div`
+overflow: hidden;
+background-color:rgba(0, 15, 30, 0.95);
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 65px;` 
+
+const MenuIcons=styled.ul`
+display:flex;
+justify-content:space-evenly`
+
 
 
 
@@ -18,16 +32,15 @@ font-color:black;
 function Navbar() {
 
     return (
-        <div className="navbarItems">
-            <Navigation>
-                <ul callName="nav-links">
-                   <li><Link to="/">Home</Link></li>
-                   <li><Link to="/marketdata">Market</Link></li>
-                   <li><Link to="/howmuch">How much</Link></li>
-                    <li><Link to="/portfolio">Portfolio</Link></li>
-                </ul>
-            </Navigation>
-        </div>
+        <NavbarDiv>
+            
+                <MenuIcons>
+                 <Link to="/"> <li><img src={HomeIcon} height="30px" width="30px"></img></li></Link>
+                   <Link to="/marketdata"><li><img src={MarketIcon} height="30px" width="30px"></img></li></Link>
+                   <Link to="/howmuch"><li><img src={InvestIcon} height="30px" width="30px"></img></li></Link>
+                    <Link to="/portfolio"><li><img src={PortfIcon} height="30px" width="30px"></img></li></Link>
+            </MenuIcons>
+        </NavbarDiv>
     )
 
 }

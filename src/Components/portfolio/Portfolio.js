@@ -4,6 +4,22 @@ import ChartSum from './Chart';
 import NumericLabel from 'react-pretty-numbers';
 
 
+const getHistoricle = (coinid) => {
+    let today = new Date(),
+     startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate(),
+     endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
+
+    return fetch(`https://api.coinpaprika.com/v1/coins/${coinid}/ohlcv/historical?start=${startDate}&end=${endDate}`)
+    .then(resp => resp.json())
+    //.then((data) => console.log(data))
+    .then((data) => {
+        //console.log("resp", data)
+        // console.log({id: coinid, market: data})
+        return {id: coinid, market: data}
+    });
+
+}    
+
 function Portfolio(props) {
      const [generalSum, setGeneralSum] = useState(0);
      const [historical, setHistorical] = useState([]);
@@ -12,46 +28,27 @@ function Portfolio(props) {
      
 useEffect(() => {
     calcGeneralSum(props.portfolio);
+
+    const requests = props.portfolio.map(coin => getHistoricle(coin.id));
+        // console.log(getHistoricle(coin.id))
+        //sum = sum  + coin.amount * coin.marketinfo.ath_price
+    Promise.all(requests).then((output) => {
+        console.log(output)
+        setHistorical(output);
+      });
+
 }, []);
 
 
     const calcGeneralSum = (portfolio) => {
         let sum = 0;
 
-        // for (let i = 0; i < portfolio.length; i++) {
-        //     sum = sum + (portfolio[i].amount * portfolio[i].marketinfo.ath_price);
-        //     getHistoricle(portfolio[i].id);            
-        // }
-
-        const requests = portfolio.map((coin) => {
-            getHistoricle(coin.id);
-            console.log(getHistoricle(coin.id))
-            //sum = sum  + coin.amount * coin.marketinfo.ath_price
-        });
-        Promise.all(requests).then((output) => {
-            console.log(output)
-            setHistorical(output);
-          });
 
         setGeneralSum(sum);
 
     }
-    let today = new Date(),
-     startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate(),
-     endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
 
-const getHistoricle = (coinid) => {
 
-    return fetch(`https://api.coinpaprika.com/v1/coins/${coinid}/ohlcv/historical?start=${startDate}&end=${endDate}`)
-    .then(resp => resp.json())
-    //.then((data) => console.log(data))
-    .then((data) => {
-        //console.log("resp", data)
-        console.log({id: coinid, market: data})
-        return {id: coinid, market: data}
-    });
-
-}    
 
     const priceForm = {
         'justification': 'L',
