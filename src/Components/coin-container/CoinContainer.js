@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import CoinItem from '../coin-item/coin-item';
-import './CoinContainer.css'
 import styled from 'styled-components';
 
 //CSS

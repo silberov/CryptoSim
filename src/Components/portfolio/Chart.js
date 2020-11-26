@@ -15,9 +15,9 @@ import styled from 'styled-components';
 
 
 const DivBackground = styled.div`
-height: 350px;
-width:350px;
-background-color:rgba(0, 15, 30, 0.85);
+height: 220px;
+width:400px;
+background-color:rgba(3, 8, 14, 1);
 text-align:center;
 padding: 10px;
 margin-top: 15px;
@@ -26,6 +26,8 @@ margin-bottom: 15px
 const ChartDiv=styled.div`
 display:flex;
 align-content:flex-end;
+margin-top:10px;
+margin-bottom:10px
 `
 
 
