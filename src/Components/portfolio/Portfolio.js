@@ -1,7 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import CoinContainer from '../coin-container/CoinContainer';
 import ChartSum from './Chart';
+import styled from 'styled-components';
 import NumericLabel from 'react-pretty-numbers';
+
+
+//CSS
+
+const ButtonMini= styled.button `
+font-family: "Space Mono";
+font-weight: bold;
+background-color:rgba(183, 207, 214, 1);
+font-size: 0.9rem;
+width: 100px;
+height: 30px;
+text-align: center;
+`
+
+const SumDisplay=styled.div`
+text-shadow: 2px 2px rgba(251, 59, 108, 1);
+font-size:36px;
+font-weight:bolder;
+text-align:center;
+
+`
+
+
+const DivBackground = styled.div`
+background-color:rgba(0, 15, 30, 0.85);
+text-align:center;
+padding: 10px;
+margin-top: 50px;
+`
 
 
 const getHistoricle = (coinid) => {
@@ -95,19 +125,21 @@ useEffect(() => {
     //console.log("historical", historical)
     //console.log('hello')
     return(
-        <div className="Portfolio">
-            <div style={{fontSize: "36px", fontWeight: "bolder"}}>
+        <DivBackground>
+            <SumDisplay>
                 <NumericLabel params={priceForm}>{generalSum}</NumericLabel>
+
             </div>
             <ChartSum data={chartData} />
+
             <div className="changeButtons">
-                <button>1h</button>
-                <button>6h</button>
-                <button>1d</button>
-                <button>7d</button>
+                <ButtonMini>1h</ButtonMini>
+                <ButtonMini>6h</ButtonMini>
+                <ButtonMini>1d</ButtonMini>
+                <ButtonMini>7d</ButtonMini>
             </div>
             <CoinContainer portfolio={props.portfolio} inPortfolio={true} />
-        </div>
+        </DivBackground>
     )
 
 }
