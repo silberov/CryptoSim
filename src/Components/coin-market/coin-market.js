@@ -8,7 +8,6 @@ import CoinItem from '../coin-item/coin-item';
 //CSS
 const CoinNames=styled.h3 `
 color:rgba(223, 249, 255, 1);
-text-shadow: 2px 2px rgba(251, 59, 108, 1);
 font-size: 1rem;`
 
 const CoinItemDiv= styled.div`

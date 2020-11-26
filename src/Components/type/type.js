@@ -28,12 +28,7 @@ height: 50px;
 text-align: center;
 box-shadow: 8px 8px;`
 
-const SelectMenu= styled.select`
-color:black;
-width: 400px;
-height:40px;
-background-color:rgba(183, 207, 214, 1);
-`
+
 //Code for Component starts here
 class Type extends Component {
     state={
