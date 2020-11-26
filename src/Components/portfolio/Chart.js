@@ -10,19 +10,45 @@
 
 import React from 'react';
 import {Line} from 'react-chartjs-2';
-import './chart.css';
+import styled from 'styled-components';
+
+
+
+const DivBackground = styled.div`
+height: 350px;
+width:350px;
+background-color:rgba(0, 15, 30, 0.85);
+text-align:center;
+padding: 10px;
+margin-top: 15px;
+margin-bottom: 15px
+`
+const ChartDiv=styled.div`
+display:flex;
+align-content:flex-end;
+`
 
 
 
 const data={
     labels:["14:00","15:00","16:00","17:00"],
-    datasets:[
-        {label: "SUM change",
-        data:[6850,6950,6450,6788]
+    datasets: [{
+        fill: true,
+        responsive: true,
+          lineTension: 0.5,
+          backgroundColor: 'rgba(0, 15, 30, 0.95)',
+          borderColor: 'gradient',
+          pointBorderColor: '#111',
+          pointBackgroundColor: 'rgba(223, 249, 255, 1)',
+          pointBorderWidth: 2,
+        backgroundColor: 'rgba(251, 59, 108, 0.65)',
+        data: [
+          '',437, 1387, 2298, 5324, 13811, 28508, 34014
+        ]
+      }],
+      
     }
-    ],
-
-}
+    
 
 class ChartSum extends React.Component {
 
@@ -32,16 +58,15 @@ class ChartSum extends React.Component {
             chart: 0
         }
     }
-
+ 
     render(){
 
         return(
-            <div> 
-            <h3>SUM of Portfolio Displayed Here</h3>
-           <div className="chart"> 
+            <DivBackground> 
+           <ChartDiv> 
             <Line data={data}/>
-            </div>
-            </div>
+            </ChartDiv>
+            </DivBackground>
 
         )
     }
