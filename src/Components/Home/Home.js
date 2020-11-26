@@ -24,11 +24,18 @@ height: 50px;
 text-align: center;
 box-shadow: 8px 8px;
 `
+
+const ImgDiv=styled.div`
+display:flex;
+align-items:center`
 // Code for Component starts here
 function HomePage() {
 
     return (
         <div className="DivBackground">
+            <div>
+            <img src="https://media3.giphy.com/media/l49JMVDvP8D38LHwI/giphy.gif?cid=ecf05e477dgvajkbyzzficp2hpfpo1efpb1s9k72277p2yuf&rid=giphy.gif" height="70px" width="70px" />
+            </div>
             <Title>Welcome fellow Cryptonaut</Title>
             <br></br>
             <p>Cryptosim is an app designed for you to start your safe journey into the Cryptoverse without taking any risks.

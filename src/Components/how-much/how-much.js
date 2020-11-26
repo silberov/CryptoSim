@@ -19,6 +19,8 @@ align-item:center;
 height:40px;
 width:300px;
 border:1.5px solid black;
+border-box:box-sizing;
+margin:auto;
 
 `
 const Button = styled.input `
