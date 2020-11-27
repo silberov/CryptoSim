@@ -5,7 +5,8 @@ import styled from 'styled-components';
 //CSS
 
 const MiniDiv=styled.div`
-background-color:rgba(0, 15, 30, 1);
+padding: 24px 16px 6px 16px;
+//background-color:rgba(0, 15, 30, 1);
 display: flex;
 justify-content: space-between;
 font-size: 12px;
@@ -15,7 +16,6 @@ const MiniDisplay=styled.p`
 color:rgba(251, 59, 108, 1)`
 
 function CoinContainer (props) {
-    //console.log('re-render', props)
     return (
         <div>
             <MiniDiv>

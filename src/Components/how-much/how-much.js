@@ -8,21 +8,27 @@ import styles from 'styled-components'
 
 
 const Title=styled.h2 `
+margin: 12px auto;
 text-shadow: 2px 2px rgba(251, 59, 108, 1);
-text-align:center`
+text-align:center
+`
 
 
 const Inputfield=styled.input`
-background-color:rgba(148, 163, 167, 1);
-display:flex;
-align-item:center;
-height:40px;
-width:300px;
+font-family: "Space Mono";
+background-color: rgba(148, 163, 167, 1);
+padding: 8px;
+margin: 24px auto;
+height: 40px;
+width: 300px;
 border:1.5px solid black;
-
+&:focus {
+  outline: none;
+}
 `
-const Button = styled.input `
 
+const Button = styled.input `
+margin: 24px auto;
 font-family: "Space Mono";
 font-weight: bold;
 background-color:rgba(183, 207, 214, 1);
@@ -30,7 +36,18 @@ font-size: 0.9rem;
 width: 200px;
 height: 50px;
 text-align: center;
-box-shadow: 8px 8px;
+box-shadow: 8px 8px rgba(223, 249, 255, 0.2);;
+border: none;
+&:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+&:hover {
+    background-color: rgba(251, 59, 108, 1);
+    //box-shadow: 8px 8px rgba(251, 59, 108, 0.2);
+    box-shadow: none;
+}
 `
 //Component Code
 class HowMuch extends React.Component {
@@ -54,26 +71,24 @@ class HowMuch extends React.Component {
 
     render() {
     return(
-      <div className="Container">
+
       <div className="DivBackground">
         {this.state.redirect && <Redirect to="/test" />}
         <form onSubmit={this.handleSubmit}>
             <Title>How much would you like to invest?</Title>
-            <br></br>
-            
-                <p>Here you can decide, how much of your FIAT you would like to turn into Magic Internet Money.
-                  <br></br>
-                   We advise you to stay realistic so you can get and idea of how Crypto Currencies work in real life.
-                   <br></br>
-                   You can type the amount here:
-                </p>
-                <br></br> 
-                <Inputfield onChange={this.handleChange} value={this.state.value} name="sum" />
-                <br></br>
-            
-                <Button type="submit" value="Submit" />
-        </form>
-    </div>
+            <p>
+              Here you can decide, how much of your FIAT you would like to turn into Magic Internet Money.
+            </p>
+            <p>
+              We advise you to stay realistic so you can get and idea of how Crypto Currencies work in real life.
+            </p>
+            <p>
+                You can type the amount here:
+            </p>
+            <Inputfield onChange={this.handleChange} value={this.state.value} name="sum" /><br/>
+            <Button type="submit" value="Submit" />
+    </form>
+
     </div>
     )
     }

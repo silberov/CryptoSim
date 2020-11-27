@@ -13,7 +13,7 @@ font-size: 1rem;`
 const CoinItemDiv= styled.div`
 margin: auto;
 padding: 16px;
-background-color:rgba(16, 24, 32, 1);
+background-color: #000F1E;
 border: 1px solid rgba(223, 249, 255, 1);
 display: flex;
 justify-content: space-between;
@@ -54,6 +54,7 @@ class CoinMarket extends React.Component {
 
         return (
             <CoinItemDiv>
+                <div style={{display: "flex", alignItems:"center"}}>
                 <div className="coinSymbol">
                     <img src={this.state.icon} alt="" />
                 </div>
@@ -63,6 +64,7 @@ class CoinMarket extends React.Component {
                         <p className="rank">{this.state.rank}</p>
                         <p className="symbol">{this.state.symbol}</p>
                     </div>
+                </div>
                 </div>
                 <div>
                     <p className={`${this.state[this.props.userChoice] > 0

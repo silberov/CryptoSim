@@ -35,16 +35,32 @@ margin-top: 50px;
 
 
 const getHistoricle = (coinid) => {
-    let today = new Date(),
-     startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate(),
-     endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
+    let today = new Date();
+    let startDate, endDate;
+    //if (today.getDate() - time > 0){
+
+        startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate();
+
+        endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
+
+    //} 
+    //else if (Math.trunc(time/30) === 0) {
+
+
+        // let month = Math.trunc(time/30);
+        // startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate();
+
+        // endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-time);
+    //}
+  
+
+
+    //  let startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate();
+    //  let endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
 
     return fetch(`https://api.coinpaprika.com/v1/coins/${coinid}/ohlcv/historical?start=${startDate}&end=${endDate}`)
     .then(resp => resp.json())
-    //.then((data) => console.log(data))
     .then((data) => {
-        //console.log("resp", data)
-        // console.log({id: coinid, market: data})
         return {id: coinid, market: data}
     });
 
@@ -59,10 +75,7 @@ function Portfolio(props) {
      
 useEffect(() => {
     calcGeneralSum(props.portfolio);
-    //let sum = 0;
     const requests = props.portfolio.map(coin => getHistoricle(coin.id));
-
-        //sum = sum  + coin.amount * coin.marketinfo.ath_price
     Promise.all(requests).then((output) => {
         console.log(output)
         setHistorical(output);
@@ -78,30 +91,25 @@ useEffect(() => {
     const calcGeneralSum = (portfolio) => {
         let sum = 0;
         portfolio.map((coin) => sum = sum  + (coin.amount * coin.marketinfo.price))
-        console.log("sum", sum);
+        //console.log("sum", sum);
         setGeneralSum(sum);
     }
 
+
     function buildChartData(portfolio, past) {
-        console.log("past", past)
+        //console.log("past", past)
         let dataInternal = [];
         let labels = [];
         for (let i = 0; i < portfolio.length; i++) {
 
             for (let j = 0; j < past[i].market.length; j++) {
                 if (i === 0) {
-                    //console.log(portfolio[i].amount * past[i].market[j].close)
                     dataInternal.push(portfolio[i].amount * past[i].market[j].close);
-
-                    //labels.push(past[i].market[j].time_close)
                 } else {
                     dataInternal[j] =  dataInternal[j] + portfolio[i].amount * past[i].market[j].close
                 }
-                //console.log(past[i].market[j].time_close)
-                //console.log(dataInternal)
             }
         }
-        console.log(dataInternal)
         setChartData(dataInternal)
     }
 
@@ -120,16 +128,15 @@ useEffect(() => {
         'shortFormatPrecision': 1,
         };
 
-
-
-    //console.log("historical", historical)
-    //console.log('hello')
     return(
-        <DivBackground>
+        <div className="DivBackground">
             <SumDisplay>
                 <NumericLabel params={priceForm}>{generalSum}</NumericLabel>
             </SumDisplay>
-            <ChartSum data={chartData} />
+            <div style={{margin: "auto"}}>
+                <ChartSum data={chartData} />
+            </div>
+            
             <div className="changeButtons">
                 <ButtonMini>7d</ButtonMini>
                 <ButtonMini>14d</ButtonMini>
@@ -137,7 +144,7 @@ useEffect(() => {
                 <ButtonMini>90d</ButtonMini>
             </div>
             <CoinContainer portfolio={props.portfolio} inPortfolio={true} />
-        </DivBackground>
+        </div>
     )
 
 }

@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const CoinItemDiv= styled.div`
 margin: auto;
 padding: 16px;
-background-color:rgba(16, 24, 32, 1);
+background-color: #000F1E;
 border: 1px solid rgba(223, 249, 255, 1);
 display: flex;
 justify-content: space-between;

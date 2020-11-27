@@ -11,23 +11,24 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 import styled from 'styled-components';
+import './chart.css';
 
 
 
 const DivBackground = styled.div`
-height: 220px;
-width:400px;
-background-color:rgba(3, 8, 14, 1);
-text-align:center;
-padding: 10px;
-margin-top: 15px;
-margin-bottom: 15px
+// height: 220px;
+// width:400px;
+    background-color: #000F1E;
+// text-align:center;
+// padding: 10px;
+// margin-top: 15px;
+// margin-bottom: 15px
 `
 const ChartDiv=styled.div`
-display:flex;
-align-content:flex-end;
-margin-top:10px;
-margin-bottom:10px
+// display:flex;
+// align-content:flex-end;
+// margin-top:10px;
+// margin-bottom:10px;
 `
 
 

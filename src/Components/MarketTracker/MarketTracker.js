@@ -49,7 +49,7 @@ class Market extends React.Component {
 
   render(props) {
     return (
-      <DivBackground>
+      <div className="DivBackground">
         <div class="text">
           <TitleH2>Market data</TitleH2>
           <p>Staying up-to-date is essential when you invest in Crypto.<br></br>
@@ -65,7 +65,7 @@ class Market extends React.Component {
         {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} userChoice={this.state.userChoice} />))})
        
 
-      </DivBackground>
+      </div>
     );
   }
 }
