@@ -17,10 +17,8 @@ background-color:rgba(148, 163, 167, 1);
 display:flex;
 align-item:center;
 height:40px;
-width:300px;
+width:380px;
 border:1.5px solid black;
-border-box:box-sizing;
-margin:auto;
 
 `
 const Button = styled.input `

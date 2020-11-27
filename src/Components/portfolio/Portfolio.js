@@ -12,7 +12,7 @@ font-family: "Space Mono";
 font-weight: bold;
 background-color:rgba(183, 207, 214, 1);
 font-size: 0.9rem;
-width: 100px;
+width: 125px;
 height: 30px;
 text-align: center;
 `
@@ -27,7 +27,7 @@ text-align:center;
 
 
 const DivBackground = styled.div`
-background-color:rgba(0, 15, 30, 0.85);
+background-color:rgba(0, 15, 30, 1);
 text-align:center;
 padding: 10px;
 margin-top: 50px;
@@ -129,14 +129,13 @@ useEffect(() => {
             <SumDisplay>
                 <NumericLabel params={priceForm}>{generalSum}</NumericLabel>
 
-            </div>
+            </SumDisplay>
             <ChartSum data={chartData} />
 
             <div className="changeButtons">
-                <ButtonMini>1h</ButtonMini>
-                <ButtonMini>6h</ButtonMini>
-                <ButtonMini>1d</ButtonMini>
-                <ButtonMini>7d</ButtonMini>
+                <ButtonMini>24h</ButtonMini>
+                <ButtonMini>90 days</ButtonMini>
+                <ButtonMini>180 days</ButtonMini>
             </div>
             <CoinContainer portfolio={props.portfolio} inPortfolio={true} />
         </DivBackground>
