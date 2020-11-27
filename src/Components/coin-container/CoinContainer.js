@@ -23,8 +23,9 @@ function CoinContainer (props) {
                 <MiniDisplay>Price</MiniDisplay>
                 <MiniDisplay>{props.inPortfolio ? "Balance" : "Distribution"}</MiniDisplay>
             </MiniDiv>
-            {props.portfolio && props.portfolio.map((item) =>  
+            {props.portfolio && props.portfolio.map((item, idx) =>  
             <CoinItem name={item.name} 
+            key={idx}
             icon={item.icon} 
             marketinfo={item.marketinfo}
             amount={item.amount}

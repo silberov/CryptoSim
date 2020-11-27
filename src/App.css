@@ -58,3 +58,7 @@ body {
 
 .pacman {
 }
+
+select {
+  color: #000f1e;
+}

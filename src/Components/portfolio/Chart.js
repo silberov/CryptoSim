@@ -18,11 +18,11 @@ import './chart.css';
 const DivBackground = styled.div`
 // height: 220px;
 // width:400px;
-    background-color: #000F1E;
+ //   background-color: #000F1E;
 // text-align:center;
 // padding: 10px;
 // margin-top: 15px;
-// margin-bottom: 15px
+// margin-bottom: 15px;
 `
 const ChartDiv=styled.div`
 // display:flex;
@@ -50,7 +50,6 @@ class ChartSum extends React.Component {
         const data={
             labels:["14:00","15:00","16:00","17:00"],
             datasets: [{
-                
                 fill: true,
                 responsive: true,
                 lineTension: 0.5,

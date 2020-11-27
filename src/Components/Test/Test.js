@@ -54,7 +54,7 @@ class Test extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.typeChoice(this.state.type);
-        setTimeout(()=> this.setState({redirect:true}), 1000);
+        this.setState({redirect:true});
     }
 
     render () {

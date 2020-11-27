@@ -12,12 +12,12 @@ background-color:rgba(0, 15, 30, 0.85);
 text-align:center;
 padding: 10px;
 margin-top: 15px;
-margin-bottom: 15px
+margin-bottom: 15px;
 `
 const TitleH2 = styled.h2 `
 text-shadow: 2px 2px rgba(251, 59, 108, 1);
 `
-const Button = styled.button `
+const Input = styled.input`
 margin: 24px auto;
 font-family: "Space Mono";
 font-weight: bold;
@@ -26,7 +26,7 @@ font-size: 0.9rem;
 width: 200px;
 height: 50px;
 text-align: center;
-box-shadow: 8px 8px rgba(223, 249, 255, 0.2);;
+box-shadow: 8px 8px rgba(223, 249, 255, 0.2);
 border: none;
 &:focus {
     outline: none;
@@ -37,7 +37,30 @@ border: none;
     background-color: rgba(251, 59, 108, 1);
     //box-shadow: 8px 8px rgba(251, 59, 108, 0.2);
     box-shadow: none;
-}`
+}
+`
+const Button = styled.button `
+margin: 24px auto;
+font-family: "Space Mono";
+font-weight: bold;
+background-color:rgba(183, 207, 214, 1);
+font-size: 0.9rem;
+width: 200px;
+height: 50px;
+text-align: center;
+box-shadow: 8px 8px rgba(223, 249, 255, 0.2);
+border: none;
+// &:focus {
+//     outline: none;
+//     box-shadow: none;
+//     border: none;
+// }
+// &:hover {
+//     background-color: rgba(251, 59, 108, 1);
+//     //box-shadow: 8px 8px rgba(251, 59, 108, 0.2);
+//     box-shadow: none;
+//  }
+`
 
 
 //Code for Component starts here
@@ -47,7 +70,7 @@ class Type extends Component {
     }
 
     componentDidMount() {
-        this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData)
+        this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData);
     }
 
     handleChange = (event) => {
@@ -56,7 +79,7 @@ class Type extends Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.investorType !==  this.props.investorType) {
-            this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData)
+            this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData);
         }
     }
     
@@ -75,9 +98,9 @@ class Type extends Component {
                 <TitleH2>{this.props.investorType.type}</TitleH2>
                 <p>{this.props.investorType.text}</p>
                 {this.props.portfolio && <CoinContainer portfolio={this.props.portfolio} inPortfolio={false} />}
-                {/* {this.state.portfolio && <CoinContainer portfolio={this.state.portfolio} inPortfolio={false} />} */}
-                {/* {this.state.portfolio && this.state.portfolio.map((item) => <CoinItem item={item} />)} */}
                <br></br>
+                <Input onClick={()=> this.setState({redirect: true})} type="submit" value="Invest" />
+                <br/>
                 <Button onClick={()=> this.setState({redirect: true})}>Invest</Button>
 
             </div>

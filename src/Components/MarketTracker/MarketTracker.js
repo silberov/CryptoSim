@@ -59,10 +59,10 @@ class Market extends React.Component {
         </div>
         <div>
         
-          {choices.map(button => <ButtonMini value={button.id} onClick={(event) => this.handleDateChange(event)} > {button.text} </ButtonMini>)}
+          {choices.map((button, index) => <ButtonMini key={index} value={button.id} onClick={(event) => this.handleDateChange(event)} > {button.text} </ButtonMini>)}
         </div>
 
-        {this.props.coinapi && this.props.coinapi.map(info => (<CoinMarket coininfo={info} userChoice={this.state.userChoice} />))})
+        {this.props.coinapi && this.props.coinapi.map((info, index) => (<CoinMarket key={index} coininfo={info} userChoice={this.state.userChoice} />))})
        
 
       </div>

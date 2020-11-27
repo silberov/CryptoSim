@@ -50,7 +50,7 @@ function CoinItem (props) {
 
     return (
         <CoinItemDiv>
-            <div style={{display:"flex", width: "200px;"}}>
+            <div style={{display:"flex", width: "200px"}}>
                 <div className="coinSymbol">
                     <img src={props.icon} alt={`symbol of ${props.name}`}/>
                 </div>

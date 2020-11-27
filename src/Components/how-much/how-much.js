@@ -57,7 +57,7 @@ class HowMuch extends React.Component {
     }
 
     handleChange = (event) => {
-        this.setState({sum: event.target.value});
+        //this.setState({sum: event.target.value});
         this.props.sumSubmit(event.target.value);
         //console.log(this.state.sum);
       }
@@ -66,7 +66,7 @@ class HowMuch extends React.Component {
       event.preventDefault();
       //console.log("state", this.state.sum);
         //this.props.sumSubmit(this.state.sum);
-      setTimeout(()=> this.setState({redirect:true}), 1000)
+      this.setState({redirect:true})
     }
 
     render() {
@@ -87,7 +87,7 @@ class HowMuch extends React.Component {
             </p>
             <Inputfield onChange={this.handleChange} value={this.state.value} name="sum" /><br/>
             <Button type="submit" value="Submit" />
-    </form>
+          </form>
 
     </div>
     )

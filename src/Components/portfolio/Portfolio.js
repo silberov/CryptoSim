@@ -35,36 +35,21 @@ margin-top: 50px;
 
 
 const getHistoricle = (coinid) => {
-    let today = new Date();
-    let startDate, endDate;
-    //if (today.getDate() - time > 0){
-
-        startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate();
-
-        endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
-
-    //} 
-    //else if (Math.trunc(time/30) === 0) {
-
-
-        // let month = Math.trunc(time/30);
-        // startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate();
-
-        // endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-time);
-    //}
-  
-
-
-    //  let startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate();
-    //  let endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
+    let today = new Date(),
+     startDate = today.getFullYear() + '-' + (today.getMonth()) + '-' + today.getDate(),
+     endDate = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + (today.getDate()-1);
 
     return fetch(`https://api.coinpaprika.com/v1/coins/${coinid}/ohlcv/historical?start=${startDate}&end=${endDate}`)
     .then(resp => resp.json())
+    //.then((data) => console.log(data))
     .then((data) => {
+        //console.log("resp", data)
+        // console.log({id: coinid, market: data})
         return {id: coinid, market: data}
     });
 
 }    
+  
 
 function Portfolio(props) {
      const [generalSum, setGeneralSum] = useState(0);
