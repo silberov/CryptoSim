@@ -123,7 +123,7 @@ class App extends React.Component {
                 symbol: marketData[j].symbol,
                  icon: marketData[j].img, 
                  name: marketData[j].name, 
-                 amount: ((iSum * plan[i].procent / 100) / marketData[j].quotes.USD.ath_price), 
+                 amount: ((iSum * plan[i].procent / 100) / marketData[j].quotes.USD.price), 
                  procent: `${plan[i].procent}%`, 
                  marketinfo: marketData[j].quotes.USD
                 });
@@ -153,7 +153,7 @@ class App extends React.Component {
     }
      
     //const portfolio = [{coin: "BTC", amout: 3}, {coin: "BTC", amout: 3}, {coin: "BTC", amout: 3}]
-
+    //console.log(this.state.data)
   return (
     <Router>
     <div className="App">

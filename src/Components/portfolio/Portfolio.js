@@ -1,7 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import CoinContainer from '../coin-container/CoinContainer';
 import ChartSum from './Chart';
+import styled from 'styled-components';
 import NumericLabel from 'react-pretty-numbers';
+
+
+//CSS
+
+const ButtonMini= styled.button `
+font-family: "Space Mono";
+font-weight: bold;
+background-color:rgba(183, 207, 214, 1);
+font-size: 0.9rem;
+width: 100px;
+height: 30px;
+text-align: center;
+`
+
+const SumDisplay=styled.div`
+text-shadow: 2px 2px rgba(251, 59, 108, 1);
+font-size:36px;
+font-weight:bolder;
+text-align:center;
+
+`
+
+
+const DivBackground = styled.div`
+background-color:rgba(0, 15, 30, 0.85);
+text-align:center;
+padding: 10px;
+margin-top: 50px;
+`
 
 
 const getHistoricle = (coinid) => {
@@ -47,7 +77,7 @@ useEffect(() => {
 
     const calcGeneralSum = (portfolio) => {
         let sum = 0;
-        portfolio.map((coin) => sum = sum  + (coin.amount * coin.marketinfo.ath_price))
+        portfolio.map((coin) => sum = sum  + (coin.amount * coin.marketinfo.price))
         console.log("sum", sum);
         setGeneralSum(sum);
     }
@@ -95,19 +125,19 @@ useEffect(() => {
     //console.log("historical", historical)
     //console.log('hello')
     return(
-        <div className="Portfolio">
-            <div style={{fontSize: "36px", fontWeight: "bolder"}}>
+        <DivBackground>
+            <SumDisplay>
                 <NumericLabel params={priceForm}>{generalSum}</NumericLabel>
-            </div>
+            </SumDisplay>
             <ChartSum data={chartData} />
             <div className="changeButtons">
-                <button>1h</button>
-                <button>6h</button>
-                <button>1d</button>
-                <button>7d</button>
+                <ButtonMini>7d</ButtonMini>
+                <ButtonMini>14d</ButtonMini>
+                <ButtonMini>30d</ButtonMini>
+                <ButtonMini>90d</ButtonMini>
             </div>
             <CoinContainer portfolio={props.portfolio} inPortfolio={true} />
-        </div>
+        </DivBackground>
     )
 
 }

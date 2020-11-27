@@ -32,13 +32,13 @@
 }
 
 .gray {
-  color: gray;
+  color: #84959a;
 }
 
 .changePos {
-  color: limegreen;
+  color: #17f69d;
 }
 
 .changeNeg {
-  color: red;
+  color: #fb3b6c;
 }

@@ -18,10 +18,6 @@ const CoinNames=styled.h3 `
 text-align: left;
 margin: auto 24px auto 24px;
 color:rgba(223, 249, 255, 1);
-<<<<<<< HEAD
-// text-shadow: 2px 2px rgba(251, 59, 108, 1);
-=======
->>>>>>> 1e39a3b86e18dbcb09c3dd54029101789f7c76e4
 font-size: 1rem;`
 
 // Component Code
@@ -54,7 +50,7 @@ function CoinItem (props) {
 
     return (
         <CoinItemDiv>
-            <div style={{display:"flex"}}>
+            <div style={{display:"flex", width: "200px;"}}>
                 <div className="coinSymbol">
                     <img src={props.icon} alt={`symbol of ${props.name}`}/>
                 </div>
@@ -62,7 +58,7 @@ function CoinItem (props) {
                 
             </div>
             <div className="price">
-                <NumericLabel params={priceForm}>{props.marketinfo.ath_price}</ NumericLabel>
+                <NumericLabel params={priceForm}>{props.marketinfo.price}</ NumericLabel>
                 <p className={`${props.marketinfo.percent_change_7d > 0 
                 ? 'changePos' 
                 : 'changeNeg'}`}>
@@ -71,7 +67,7 @@ function CoinItem (props) {
             </div>
         
             <div className="investment">
-                <NumericLabel params={priceForm}>{props.amount * props.marketinfo.ath_price}</ NumericLabel>
+                <NumericLabel params={priceForm}>{props.amount * props.marketinfo.price}</ NumericLabel>
                 <p className="gray">{props.gray}</p>
             </div>
         </CoinItemDiv>
