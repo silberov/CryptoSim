@@ -9,8 +9,9 @@ const DivBackground = styled.div`
 background-color:rgba(0, 15, 30, 0.85);
 text-align:center;
 padding: 10px;
-margin-top: 50px;
-margin-bottom: 15px
+margin-top: 10px;
+margin-bottom: 15px;
+width: 360px;
 `
 const TitleH2 = styled.h2 `
 text-shadow: 2px 2px rgba(251, 59, 108, 1);

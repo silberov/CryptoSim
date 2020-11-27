@@ -17,7 +17,6 @@ import styled from 'styled-components';
 const DivBackground = styled.div`
 height: 220px;
 width:400px;
-background-color:rgba(3, 8, 14, 1);
 text-align:center;
 padding: 10px;
 margin-top: 15px;
