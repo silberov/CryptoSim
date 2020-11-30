@@ -16,6 +16,7 @@ import './chart.css';
 
 
 const DivBackground = styled.div`
+<<<<<<< HEAD
 // height: 220px;
 // width:400px;
  //   background-color: #000F1E;
@@ -23,6 +24,14 @@ const DivBackground = styled.div`
 // padding: 10px;
 // margin-top: 15px;
 // margin-bottom: 15px;
+=======
+height: 220px;
+width:400px;
+text-align:center;
+padding: 10px;
+margin-top: 15px;
+margin-bottom: 15px
+>>>>>>> ef0696f1000711400877364d8a52fb0852e9ab9f
 `
 const ChartDiv=styled.div`
 // display:flex;

@@ -37,11 +37,16 @@ border: none;
     box-shadow: none;
 }
 `
+
+const ImgDiv=styled.div`
+display:flex;
+align-items:center`
 // Code for Component starts here
 function HomePage() {
 
     return (
         <div className="DivBackground">
+        
             <Title>Welcome fellow Cryptonaut</Title>
             <p>Cryptoverse is an app designed for you to start your safe journey into the Crypto world without taking any risks.</p>
 

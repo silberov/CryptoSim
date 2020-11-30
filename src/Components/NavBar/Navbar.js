@@ -18,7 +18,8 @@ background-color:rgba(0, 15, 30, 0.95);
 position: fixed;
 bottom: 0;
 width: 100%;
-height: 65px;` 
+height: 65px;
+margin:auto;` 
 
 const MenuIcons=styled.ul`
 display:flex;

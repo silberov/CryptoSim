@@ -1,5 +1,4 @@
 
-  
 import React from 'react';
 import { Route, BrowserRouter as Router,Link} from "react-router-dom";
 import HowMuch from './Components/how-much/how-much';
@@ -54,15 +53,7 @@ class App extends React.Component {
     this.state = {
       data: [],
       invSum: 100,
-      investorType: {type: 'HODLler',
-      text: "Hodlers are the core, dedicated proponents of cryptocurrencies that populate the polarizing Twitter arguments and got some of the best returns in the 2017 bull market The term “HODL” actually derives itself from a grammatical error on an old Bitcoin post that had a slight misspelling of the word “holding.”",
-      plan: [
-        {id: "btc-bitcoin", procent: 80}, 
-        {id: "link-chainlink", procent: 10},
-        {id: "eth-ethereum", procent: 5},
-        {id: "usdt-tether", procent: 3},
-        {id: "atom-cosmos", procent: 2}
-      ]},
+      investorType: {},
       portfolio: [],
       loading:true,
     };
@@ -90,10 +81,10 @@ class App extends React.Component {
                 marketData[j].img = cryptoArray[i]['img']
               finalArray.push(marketData[j]);
             }
-            this.setState({ data: finalArray});
-            setTimeout(()=>{this.setState({loading:false})},2000)
           }
         }
+        this.setState({ data: finalArray});
+        setTimeout(()=>{this.setState({loading:false})},2000)
       })
       .catch((err) => {
         console.log(err);

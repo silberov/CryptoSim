@@ -15,12 +15,20 @@ text-align:center
 
 
 const Inputfield=styled.input`
+<<<<<<< HEAD
 font-family: "Space Mono";
 background-color: rgba(148, 163, 167, 1);
 padding: 8px;
 margin: 24px auto;
 height: 40px;
 width: 300px;
+=======
+background-color:rgba(148, 163, 167, 1);
+display:flex;
+align-item:center;
+height:40px;
+width:380px;
+>>>>>>> ef0696f1000711400877364d8a52fb0852e9ab9f
 border:1.5px solid black;
 &:focus {
   outline: none;

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
 body {
   font-family: "Space Mono";
   background-image: url("./Images/background.jpg");
@@ -33,7 +35,6 @@ body {
     align-items: center;
     margin-top: 50px;
     margin-bottom: 20px;
-    background-color: aqua;
   }
 
   .text {
