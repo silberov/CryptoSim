@@ -80,10 +80,10 @@ class App extends React.Component {
                 marketData[j].img = cryptoArray[i]['img']
               finalArray.push(marketData[j]);
             }
-            this.setState({ data: finalArray});
-            setTimeout(()=>{this.setState({loading:false})},2000)
           }
         }
+        this.setState({ data: finalArray});
+        setTimeout(()=>{this.setState({loading:false})},2000)
       })
       .catch((err) => {
         console.log(err);
