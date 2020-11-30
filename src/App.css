@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 body {
   font-family: "Space Mono";
   background-image: url("./Images/background.jpg");
@@ -57,17 +59,14 @@ width: 360px;
   background-color:rgba(0, 15, 30, 0.9);
   text-align:center;
   padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 25px;
+  margin:auto;
   height:700px;
-  width: 360px;
+  width: 360px;  
 
 }
 
 .pacman{
-display: flex;
-justify-content: center;
-align-items: center;
+margin:auto
 
 }
 
