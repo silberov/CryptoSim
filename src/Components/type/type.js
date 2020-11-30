@@ -77,7 +77,7 @@ class Type extends Component {
         this.props.typeChoice(event);
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps) { 
         if (prevProps.investorType !==  this.props.investorType) {
             this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData);
         }
@@ -87,21 +87,21 @@ class Type extends Component {
         return (
             <div className="DivBackground">
                 {this.state.redirect && <Redirect to="/portfolio" />}
-                <Select
+                {/* <Select
                     className="spacer" 
                     options={this.props.allTypes}
                     getOptionLabel={(type) => type.type}
                     getOptionValue={type => type.type}
                     value={this.currentType}
                     onChange={(event) => this.props.typeChoice(event)}
-                    />
+                    /> */}
                 <TitleH2>{this.props.investorType.type}</TitleH2>
                 <p>{this.props.investorType.text}</p>
                 {this.props.portfolio && <CoinContainer portfolio={this.props.portfolio} inPortfolio={false} />}
                <br></br>
                 <Input onClick={()=> this.setState({redirect: true})} type="submit" value="Invest" />
                 <br/>
-                <Button onClick={()=> this.setState({redirect: true})}>Invest</Button>
+                {/* <Button onClick={()=> this.setState({redirect: true})}>Invest</Button> */}
 
             </div>
         );

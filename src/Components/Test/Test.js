@@ -71,7 +71,7 @@ class Test extends React.Component {
                 <p style={{paddingTop:"24px"}}><strong>If you already know, you can just select the one from here:</strong></p>
 
                 <form onSubmit={this.handleSubmit}>
-                    <div style={{width:"400px", margin:"24px auto 0"}}>
+                    <div style={{width:"300px", margin: "24px auto 0"}}>
                     <Select
                         options={this.props.investorTypes}
                         getOptionLabel={(type) => type.type}

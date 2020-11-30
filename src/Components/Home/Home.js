@@ -43,7 +43,7 @@ function HomePage() {
     return (
         <div className="DivBackground">
             <Title>Welcome fellow Cryptonaut</Title>
-            <p>Cryptosim is an app designed for you to start your safe journey into the Cryptoverse without taking any risks.</p>
+            <p>Cryptoverse is an app designed for you to start your safe journey into the Crypto world without taking any risks.</p>
 
             <p>
             Here you can practice tracking your different currencies without needing real money and follow their performance, 

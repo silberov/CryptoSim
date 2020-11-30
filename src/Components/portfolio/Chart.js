@@ -48,7 +48,7 @@ class ChartSum extends React.Component {
     render(){
 
         const data={
-            labels:["14:00","15:00","16:00","17:00"],
+            labels:["27/10","1/11","15/11","26/11"],
             datasets: [{
                 fill: true,
                 responsive: true,
