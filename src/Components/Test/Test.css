@@ -1,10 +1,20 @@
 .types {
   margin: 48px;
   text-align: center;
-  color:black;
+  color: black;
 }
 
 .spacer {
- 
   margin: 16px 0;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  padding-top: 10px;
+  color: rgba(251, 59, 108, 1);
+}
+
+a:hover {
+  text-decoration: underline;
 }

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Route, BrowserRouter as Router,Link} from "react-router-dom";
 import HowMuch from './Components/how-much/how-much';
@@ -10,7 +11,7 @@ import Test from './Components/Test/Test.js'
 import {apiKey} from "./config/config"
 import {cryptoArray} from './utils/cryptoArray.js';
 import Home from './Components/Home/Home';
-import Portfolio from './Components/portfolio/Portfolio';
+import Portfolio from './Components/Portfolio/Portfolio';
 import styled from 'styled-components';
 import Loader from './Images/loader.gif'
 
@@ -151,14 +152,10 @@ updateValues = (portfolio) => {
   }
 }
  
-//const portfolio = [{coin: "BTC", amout: 3}, {coin: "BTC", amout: 3}, {coin: "BTC", amout: 3}]
-
 
   render() {
    
-   
-
-  return this.state.loading ? <div className="loaderdiv"> <img className="pacman" src={Loader} height="400px" width="300px"/> </div> :(
+  return this.state.loading ? <div className="DivBackground"> <img className="pacman" src={Loader} alt={"pacman"}/> </div> :(
     <Router>
     <div className="App">
       <div className="Container">
@@ -185,6 +182,4 @@ updateValues = (portfolio) => {
 
 
 export default App;
-
-
 

@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const CoinItemDiv= styled.div`
 margin: auto;
 padding: 16px;
-background-color:rgba(16, 24, 32, 1);
+background-color: #000F1E;
 border: 1px solid rgba(223, 249, 255, 1);
 display: flex;
 justify-content: space-between;
@@ -50,7 +50,7 @@ function CoinItem (props) {
 
     return (
         <CoinItemDiv>
-            <div style={{display:"flex"}}>
+            <div style={{display:"flex", width: "200px"}}>
                 <div className="coinSymbol">
                     <img src={props.icon} alt={`symbol of ${props.name}`}/>
                 </div>
@@ -58,7 +58,7 @@ function CoinItem (props) {
                 
             </div>
             <div className="price">
-                <NumericLabel params={priceForm}>{props.marketinfo.ath_price}</ NumericLabel>
+                <NumericLabel params={priceForm}>{props.marketinfo.price}</ NumericLabel>
                 <p className={`${props.marketinfo.percent_change_7d > 0 
                 ? 'changePos' 
                 : 'changeNeg'}`}>
@@ -67,7 +67,7 @@ function CoinItem (props) {
             </div>
         
             <div className="investment">
-                <NumericLabel params={priceForm}>{props.amount * props.marketinfo.ath_price}</ NumericLabel>
+                <NumericLabel params={priceForm}>{props.amount * props.marketinfo.price}</ NumericLabel>
                 <p className="gray">{props.gray}</p>
             </div>
         </CoinItemDiv>

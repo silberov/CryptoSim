@@ -11,44 +11,38 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 import styled from 'styled-components';
+import './chart.css';
 
 
 
 const DivBackground = styled.div`
+<<<<<<< HEAD
+// height: 220px;
+// width:400px;
+ //   background-color: #000F1E;
+// text-align:center;
+// padding: 10px;
+// margin-top: 15px;
+// margin-bottom: 15px;
+=======
 height: 220px;
 width:400px;
 text-align:center;
 padding: 10px;
 margin-top: 15px;
 margin-bottom: 15px
+>>>>>>> ef0696f1000711400877364d8a52fb0852e9ab9f
 `
 const ChartDiv=styled.div`
-display:flex;
-align-content:flex-end;
-margin-top:10px;
-margin-bottom:10px
+// display:flex;
+// align-content:flex-end;
+// margin-top:10px;
+// margin-bottom:10px;
 `
 
 
 
-const data={
-    labels:["14:00","15:00","16:00","17:00"],
-    datasets: [{
-        fill: true,
-        responsive: true,
-          lineTension: 0.5,
-          backgroundColor: 'rgba(0, 15, 30, 0.95)',
-          borderColor: 'gradient',
-          pointBorderColor: '#111',
-          pointBackgroundColor: 'rgba(223, 249, 255, 1)',
-          pointBorderWidth: 2,
-        backgroundColor: 'rgba(251, 59, 108, 0.65)',
-        data: [
-          '',437, 1387, 2298, 5324, 13811, 28508, 34014
-        ]
-      }],
-      
-    }
+
     
 
 class ChartSum extends React.Component {
@@ -61,6 +55,24 @@ class ChartSum extends React.Component {
     }
  
     render(){
+
+        const data={
+            labels:["27/10","1/11","15/11","26/11"],
+            datasets: [{
+                fill: true,
+                responsive: true,
+                lineTension: 0.5,
+                backgroundColor: 'rgba(0, 15, 30, 0.95)',
+                borderColor: 'gradient',
+                pointBorderColor: '#111',
+                pointBackgroundColor: 'rgba(223, 249, 255, 1)',
+                pointBorderWidth: 2,
+                backgroundColor: 'rgba(251, 59, 108, 0.65)',
+                //data: [63.04112170607709, 65.48510206420256, 63.60538927275552, 64.18928071533203, 64.55434296324668, 65.48913187428919, 65.42331865052124, 64.42655040289189, 65.67268797960284, 66.40598587866582, 72.41790079411615, 73.26494290233106, 70.13291258124015, 73.33139671664478, 72.60598534894496, 72.66173451490282, 74.25607883984311, 76.35764230834224, 76.85406035683236, 75.70872962232794, 74.93899458690103, 78.19569526221574, 82.43575815861941, 83.12615940827229, 83.11096338727197, 86.75421441032819, 87.94513729244824, 86.38318205997192, 86.7090115409106, 89.81501152991449, 88.08409148557458]
+                data: this.props.data
+              }],
+              
+            }
 
         return(
             <DivBackground> 

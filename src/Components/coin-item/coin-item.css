@@ -8,25 +8,24 @@
   padding: 16px;
   background-color: #fbfbfb;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
 .investment,
 .price {
-  margin-right: 24px;
   text-align: right;
   font-size: 12px;
 }
 
 .gray {
-  color: gray;
+  color: #84959a;
 }
 
 .changePos {
-  color: limegreen;
+  color: #17f69d;
 }
 
 .changeNeg {
-  color: red;
+  color: #fb3b6c;
 }

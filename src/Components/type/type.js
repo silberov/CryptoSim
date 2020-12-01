@@ -12,7 +12,7 @@ background-color:rgba(0, 15, 30, 0.85);
 text-align:center;
 padding: 10px;
 margin-top: 15px;
-margin-bottom: 15px
+margin-bottom: 15px;
 `
 const TitleH2 = styled.h2`
 text-shadow: 2px 2px rgba(251, 59, 108, 1);
@@ -26,7 +26,19 @@ font-size: 0.9rem;
 width: 200px;
 height: 50px;
 text-align: center;
-box-shadow: 8px 8px;`
+box-shadow: 8px 8px rgba(223, 249, 255, 0.2);
+border: none;
+// &:focus {
+//     outline: none;
+//     box-shadow: none;
+//     border: none;
+// }
+// &:hover {
+//     background-color: rgba(251, 59, 108, 1);
+//     //box-shadow: 8px 8px rgba(251, 59, 108, 0.2);
+//     box-shadow: none;
+//  }
+`
 
 
 //Code for Component starts here
@@ -36,14 +48,11 @@ class Type extends Component {
     }
 
     componentDidMount() {
-        this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData)
+        this.props.buildPortfolio(this.props.sum, this.props.investorType.plan, this.props.marketData);
     }
 
     handleChange = (event) => {
         this.props.typeChoice(event);
-        //this.setState({currentType: event});
-        //console.log("event" ,event);
-        //console.log(this.props.buildPortfolio(this.state.sum, this.state.currentType.plan, this.props.marketData)) 
     }
 
     componentDidUpdate(prevProps) {
@@ -52,12 +61,9 @@ class Type extends Component {
         }
     }
 
-
-
     render() {
-        //console.log("type props", this.props);
         return (
-            <DivBackground>
+            <div className="DivBackground">
                 {this.state.redirect && <Redirect to="/portfolio" />}
                 <Select
                     className="spacer"
@@ -73,7 +79,7 @@ class Type extends Component {
 
                 <br></br>
                 <Button onClick={() => this.setState({ redirect: true })}>Invest</Button>
-            </DivBackground>
+            </div>
         );
     }
 }
